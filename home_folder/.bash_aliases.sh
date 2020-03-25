@@ -1,8 +1,10 @@
 
 #################################################################
-# Environment Macros defined here CD
+# Environment Macros defined here - Common Paths
 #################################################################
 export EXCHANGE_FOLDER=$HOME/support_package/exchange_folder
+alias exchange='cd $EXCHANGE_FOLDER'
+alias support_package='cd $HOME/support_package'
 
 
 #################################################################
@@ -29,14 +31,13 @@ alias support='cd /home/sudhanshu/rpi/rpi_iot_kernel/support'
 #################################################################
 # CD Aliases go here - Raspberry Pi
 #################################################################
-alias exchange='cd $EXCHANGE_FOLDER'
 
 
 #################################################################
 # SSH Aliases go here
 #################################################################
 alias connect_rpi='ssh pi@192.168.29.8'
-
+alias connect_vm='ssh sudhanshu@192.168.29.228'
 
 #######################################
 # Global Environment Variables exports
@@ -175,19 +176,19 @@ alias csd='cscope -d'
 alias csr='cscope -R'
 
 alias createpatch_all='git format-patch  origin/master --author priyanka --stdout >> patch_file.patch '
-alias cpl='git format-patch -n HEAD^' 
-alias createpatch_last='git format-patch -n HEAD^' 
+alias cpl='git format-patch -n HEAD^'
+alias createpatch_last='git format-patch -n HEAD^'
 
 alias chp='./scripts/checkpatch.pl '
 alias checkpatch='./scripts/checkpatch.pl '
 alias checkpatchfixinplace='./scripts/checkpatch.pl --fix-inplace '
-alias cleanpatch='./scripts/cleanpatch ' 
+alias cleanpatch='./scripts/cleanpatch '
 
 alias createpatch_commitid='git format-patch -1 '
 alias createpatch_startcommitid='git format-patch '
 
-alias applypatch_patchfile_as_is='git am '  
-alias applypatch_withcommitmesg='git am --signoff <  '  
+alias applypatch_patchfile_as_is='git am '
+alias applypatch_withcommitmesg='git am --signoff <  '
 alias applypatch_patchfile='patch -p1 < '
 
 alias show_files_modifed_commitID='git show --pretty="" --name-only '
