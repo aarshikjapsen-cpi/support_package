@@ -1,5 +1,11 @@
 
 #################################################################
+# Environment Macros defined here CD
+#################################################################
+export EXCHANGE_FOLDER=$HOME/support_package/exchange_folder
+
+
+#################################################################
 # CD Aliases go here - MAC OS
 #################################################################
 alias linux='cd /Users/sudhanshu/Documents/R_Drive/01_Programming_Stuff/03_raspberry_pi/03_Kernel_Sources/linux'
@@ -18,12 +24,12 @@ alias rpi='cd /home/sudhanshu/rpi/rpi_iot_kernel'
 alias linux='cd /home/sudhanshu/rpi/rpi_iot_kernel/linux'
 alias firmware='cd /home/sudhanshu/rpi/rpi_iot_kernel/firmware'
 alias support='cd /home/sudhanshu/rpi/rpi_iot_kernel/support'
-alias v='vim '
+
 
 #################################################################
 # CD Aliases go here - Raspberry Pi
 #################################################################
-
+alias exchange='cd $EXCHANGE_FOLDER'
 
 
 #################################################################
@@ -112,6 +118,7 @@ alias ps='ps -ax'
 # Misc Commands
 # =============
 alias v='vim '
+alias vi='vim '
 alias editbashalias='vim $HOME/support_package/home_folder/.bash_aliases.sh'
 alias editgitconfig='vim .git/config'
 #alias objdumpuboot='/home/sudhanshu/toolchain/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-objdump -Dsl u-boot > dump'
@@ -124,7 +131,7 @@ alias ll='ls -alrt'
 
 # GIT Aliases
 # ===========
-alias reload='source ~/.bash_aliases.sh'
+alias reload='source ~/support_package/home_folder/.bash_aliases.sh'
 alias gl='git log '
 alias gl_withfilechanges='git log --name-only '
 alias gl_withfileandcodechanges='git log -p '
