@@ -1,18 +1,30 @@
 
 #################################################################
-# CD Aliases go here
+# CD Aliases go here - MAC OS
 #################################################################
 alias linux='cd /Users/sudhanshu/Documents/R_Drive/01_Programming_Stuff/03_raspberry_pi/03_Kernel_Sources/linux'
 alias algo='cd /Users/sudhanshu/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm'
 alias arduino='cd /Users/sudhanshu/Documents/R_Drive/01_Programming_Stuff/17_Arduino/arduino'
-
 alias r='cd /Users/sudhanshu/Documents/R_Drive'
 alias q='cd /Users/sudhanshu/Documents/Q_Drive'
 alias expense='cd /Users/sudhanshu/Documents/R_Drive/02_My_Personal_Docs/01_Expenses_Investments'
-
 alias ebook='cd /Users/sudhanshu/Documents/R_Drive/01_Programming_Stuff/13_MyBookWritting'
-
 alias ai='/Users/sudhanshu/Documents/R_Drive/01_Programming_Stuff/18_AI/coursera/dlaicourse/TensorFlow Deployment/Course 2 - TensorFlow Lite'
+
+#################################################################
+# CD Aliases go here - Linux VM
+#################################################################
+alias rpi='cd /home/sudhanshu/rpi/rpi_iot_kernel'
+alias linux='cd /home/sudhanshu/rpi/rpi_iot_kernel/linux'
+alias firmware='cd /home/sudhanshu/rpi/rpi_iot_kernel/firmware'
+alias support='cd /home/sudhanshu/rpi/rpi_iot_kernel/support'
+alias v='vim '
+
+#################################################################
+# CD Aliases go here - Raspberry Pi
+#################################################################
+
+
 
 #################################################################
 # SSH Aliases go here
@@ -100,7 +112,7 @@ alias ps='ps -ax'
 # Misc Commands
 # =============
 alias v='vim '
-alias editbashalias='vim ~/.bash_aliases.sh'
+alias editbashalias='vim $HOME/support_package/home_folder/.bash_aliases.sh'
 alias editgitconfig='vim .git/config'
 #alias objdumpuboot='/home/sudhanshu/toolchain/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-objdump -Dsl u-boot > dump'
 #alias objdumplinux='/home/sudhanshu/toolchain/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-objdump -Dsl vmlinux > objdump_linux'
