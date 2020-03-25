@@ -38,6 +38,7 @@ alias support='cd /home/sudhanshu/rpi/rpi_iot_kernel/support'
 #################################################################
 alias connect_rpi='ssh pi@192.168.29.8'
 alias connect_vm='ssh sudhanshu@192.168.29.228'
+alias connect_mac='ssh sudhanshu@192.168.29.96'
 
 #######################################
 # Global Environment Variables exports
