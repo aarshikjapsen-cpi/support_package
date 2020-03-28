@@ -1,3 +1,12 @@
+#################################################################
+# To Install .bash_aliases.sh, copy following snippet to :-
+# .bashrc   (Linux)
+# .profile  (Mac)
+# etc
+#################################################################
+#if [ -f ~/support_package/home_folder/.bash_aliases.sh ]; then
+#    source ~/support_package/home_folder/.bash_aliases.sh
+#fi
 
 #################################################################
 # Environment Macros defined here - Common Paths
@@ -10,35 +19,52 @@ alias support_package='cd $HOME/support_package'
 #################################################################
 # CD Aliases go here - MAC OS
 #################################################################
-alias linux='cd /Users/sudhanshu/Documents/R_Drive/01_Programming_Stuff/03_raspberry_pi/03_Kernel_Sources/linux'
-alias algo='cd /Users/sudhanshu/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm'
-alias arduino='cd /Users/sudhanshu/Documents/R_Drive/01_Programming_Stuff/17_Arduino/arduino'
-alias r='cd /Users/sudhanshu/Documents/R_Drive'
-alias q='cd /Users/sudhanshu/Documents/Q_Drive'
-alias expense='cd /Users/sudhanshu/Documents/R_Drive/02_My_Personal_Docs/01_Expenses_Investments'
-alias ebook='cd /Users/sudhanshu/Documents/R_Drive/01_Programming_Stuff/13_MyBookWritting'
-alias ai='/Users/sudhanshu/Documents/R_Drive/01_Programming_Stuff/18_AI/coursera/dlaicourse/TensorFlow Deployment/Course 2 - TensorFlow Lite'
+if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
+alias home='cd $HOME'
+alias linux='cd $HOME/Documents/R_Drive/01_Programming_Stuff/03_raspberry_pi/03_Kernel_Sources'
+alias algo='cd $HOME/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm'
+alias arduino='cd $HOME/Documents/R_Drive/01_Programming_Stuff/17_Arduino/arduino'
+alias r='cd $HOME/Documents/R_Drive'
+alias q='cd $HOME/Documents/Q_Drive'
+alias expense='cd $HOME/Documents/R_Drive/02_My_Personal_Docs/01_Expenses_Investments'
+alias ebook='cd $HOME/Documents/R_Drive/01_Programming_Stuff/13_MyBookWritting'
+alias ai='cd $HOME/Documents/R_Drive/01_Programming_Stuff/18_AI/coursera/dlaicourse/TensorFlow Deployment/Course 2 - TensorFlow Lite'
+alias interviewprep='cd $HOME/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm/interview_preparation'
+fi
 
 #################################################################
-# CD Aliases go here - Linux VM
+# CD Aliases - Linux VM
 #################################################################
-alias rpi='cd /home/sudhanshu/rpi/rpi_iot_kernel'
-alias linux='cd /home/sudhanshu/rpi/rpi_iot_kernel/linux'
-alias firmware='cd /home/sudhanshu/rpi/rpi_iot_kernel/firmware'
-alias support='cd /home/sudhanshu/rpi/rpi_iot_kernel/support'
+if [ "$HOSTNAME" = "UbuntuVirtualBox" ]; then
+alias home='cd $HOME'
+alias rpi='cd $HOME/rpi/rpi_iot_kernel'
+alias linux='cd $HOME/rpi/rpi_iot_kernel/linux'
+alias firmware='cd $HOME/rpi/rpi_iot_kernel/firmware'
+alias support='cd $HOME/rpi/rpi_iot_kernel/support'
+fi
+
+#################################################################
+# CD Aliases - Raspberry Pi
+#################################################################
+if [ "$HOSTNAME" = "raspberry" ]; then
+alias home='cd $HOME'
+fi
 
 
 #################################################################
-# CD Aliases go here - Raspberry Pi
+# SSH Aliases - check .ssh/config for IP address of Hosts
 #################################################################
+alias connect_rpi='ssh pi@rpi'
+alias connect_vm='ssh sudhanshu@vm'
+alias connect_mac='ssh sudhanshu@mac'
 
 
 #################################################################
-# SSH Aliases go here
+# SCP Aliases - check .ssh/config for IP address of Hosts
 #################################################################
-alias connect_rpi='ssh pi@192.168.29.8'
-alias connect_vm='ssh sudhanshu@192.168.29.228'
-alias connect_mac='ssh sudhanshu@192.168.29.96'
+#alias copy_to_vm='scp -r $1 sudhanshu@192.168.29.228:/home/sudhanshu/tmp/$1'
+# scp -r 02_first_device_driver/ sudhanshu@192.168.29.228:/home/sudhanshu/tmp/01_linux_learning
+alias copy_to_vm='echo scp $1 sudhanshu@vm:.'
 
 #######################################
 # Global Environment Variables exports
