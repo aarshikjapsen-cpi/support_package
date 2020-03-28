@@ -58,6 +58,19 @@ alias connect_rpi='ssh pi@rpi'
 alias connect_vm='ssh sudhanshu@vm'
 alias connect_mac='ssh sudhanshu@mac'
 
+if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
+alias ssh_key_gen='ssh-keygen -t rsa -b 4096 -C "softwares.unleashed@gmail.com"'
+fi
+
+if [ "$HOSTNAME" = "UbuntuVirtualBox" ]; then
+alias ssh_key_gen='ssh-keygen -t rsa -b 4096 -C "softwares.unleashed@gmail.com"'
+fi
+
+if [ "$HOSTNAME" = "raspberry" ]; then
+alias ssh_key_gen='ssh-keygen -t rsa -b 4096 -C "softwares.unleashed@gmail.com"'
+fi
+
+
 
 #################################################################
 # SCP Aliases - check .ssh/config for IP address of Hosts
