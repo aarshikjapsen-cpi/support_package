@@ -75,20 +75,43 @@ fi
 #################################################################
 # SCP Aliases - check .ssh/config for IP address of Hosts
 #################################################################
-#alias copy_to_vm='scp -r $1 sudhanshu@192.168.29.228:/home/sudhanshu/tmp/$1'
-# scp -r 02_first_device_driver/ sudhanshu@192.168.29.228:/home/sudhanshu/tmp/01_linux_learning
-#alias copy_to_vm='echo scp $1 sudhanshu@vm:.'
-function copy_to_vm(){
-    PATH_LOCAL=$1
+
+# Usage : copy_to_remote user@remote_hostname local_file_name.txt remote_dir/
+function copy_to_remote(){
+    HOST_NAME_REMOTE=$1
+    PATH_LOCAL=$2
+    PATH_REMOTE=$3
+
+    if [ "$#" -ne 3 ]; then
+        echo "Illegal number of parameters"
+        echo "copy_to_remote user@remote_hostname local_file_name.txt remote_dir/"
+        exit 2
+    fi
+
+    echo "Copying local file to remote path..."
+    echo "[ LOCAL ] $PATH_LOCAL ----> [ REMOTE ] $PATH_REMOTE"
+    echo ""
+    scp -r $PATH_LOCAL $HOST_NAME_REMOTE:$PATH_REMOTE
+}
+
+# Usage : copy_from_remote user@remote_hostname remote_path_file_name local_dir_path/
+function copy_from_remote(){
+    HOST_NAME_REMOTE=$1
+    PATH_LOCAL=$3
     PATH_REMOTE=$2
 
-    echo "Local Path = $PATH_LOCAL "
+    if [ "$#" -ne 3 ]; then
+        echo "Illegal number of parameters"
+        echo "copy_from_remote user@remote_host remote_path_file_name local_dir_path/"
+        exit 2
+    fi
+
+    echo "Copying local file from remote path..."
+    echo "[ LOCAL ] $PATH_LOCAL <---- [ REMOTE ] $PATH_REMOTE"
     echo ""
-    echo "Remote Path = $PATH_REMOTE"
-    echo "scp $PATH_LOCAL sudhanshu@vm:$PATH_REMOTE"
-
-
+    scp -r $HOST_NAME_REMOTE:$PATH_REMOTE $PATH_LOCAL
 }
+
 
 
 #######################################
