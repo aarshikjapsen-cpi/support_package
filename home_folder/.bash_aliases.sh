@@ -224,13 +224,13 @@ alias ll='ls -alrt'
 
 # GIT Aliases
 # ===========
-#alias reload='source ~/support_package/home_folder/.bash_aliases.sh'
-
 function reload(){
-    cp ~/support_package/home_folder/.screenrc  ~ &&
-    cp ~/support_package/home_folder/.tmux.conf  ~ &&
-    sh ~/support_package/home_folder/.ssh/install.sh &&
-    sh ~/support_package/home_folder/.vim_runtime/install_awesome_vimrc.sh &&
+    cp ~/support_package/home_folder/.screenrc ~
+    cp ~/support_package/home_folder/.tmux.conf ~
+
+    sh ~/support_package/home_folder/.ssh/install.sh
+    sh ~/support_package/home_folder/.vim_runtime/install_awesome_vimrc.sh
+
     source ~/support_package/home_folder/.bash_aliases.sh
 }
 alias gl='git log '
