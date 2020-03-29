@@ -71,6 +71,18 @@ if [ "$HOSTNAME" = "raspberry" ]; then
 alias ssh_key_gen='ssh-keygen -t rsa -b 4096 -C "softwares.unleashed@gmail.com"'
 fi
 
+# Alias to copy public key to remote host
+function ssh_key_copy_to_remotehost(){
+    HOST_NAME_REMOTE=$1
+
+    if [ "$#" -ne 1 ]; then
+           echo "Illegal number of parameters"
+           echo "ssh_key_copy_to_remotehost user@remote_hostname"
+           exit 2
+       fi
+
+    ssh-copy-id $HOST_NAME_REMOTE
+}
 
 
 #################################################################
