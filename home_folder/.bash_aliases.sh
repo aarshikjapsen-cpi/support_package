@@ -41,6 +41,7 @@ alias rpi='cd $HOME/rpi/rpi_iot_kernel'
 alias linux='cd $HOME/rpi/rpi_iot_kernel/linux'
 alias firmware='cd $HOME/rpi/rpi_iot_kernel/firmware'
 alias support='cd $HOME/rpi/rpi_iot_kernel/support'
+alias interviewprep='cd $HOME/tmp/01_linux_learning'
 fi
 
 #################################################################
