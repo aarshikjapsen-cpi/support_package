@@ -77,7 +77,19 @@ fi
 #################################################################
 #alias copy_to_vm='scp -r $1 sudhanshu@192.168.29.228:/home/sudhanshu/tmp/$1'
 # scp -r 02_first_device_driver/ sudhanshu@192.168.29.228:/home/sudhanshu/tmp/01_linux_learning
-alias copy_to_vm='echo scp $1 sudhanshu@vm:.'
+#alias copy_to_vm='echo scp $1 sudhanshu@vm:.'
+function copy_to_vm(){
+    PATH_LOCAL=$1
+    PATH_REMOTE=$2
+
+    echo "Local Path = $PATH_LOCAL "
+    echo ""
+    echo "Remote Path = $PATH_REMOTE"
+    echo "scp $PATH_LOCAL sudhanshu@vm:$PATH_REMOTE"
+
+
+}
+
 
 #######################################
 # Global Environment Variables exports
@@ -153,7 +165,11 @@ alias grep='grep --color=auto'
 # =========
 alias ps='ps -ax'
 
-
+# screen aliases
+# ==============
+alias screenlist='screen -ls '
+alias screencreate_session_name='screen -S '
+alias screenrestore_session_name='screen -r '
 
 
 # Misc Commands
