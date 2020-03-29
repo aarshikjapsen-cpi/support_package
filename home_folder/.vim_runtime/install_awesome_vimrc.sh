@@ -2,7 +2,7 @@
 set -e
 
 mkdir -p ~/.vim_runtime
-cd ..
+cd ~/support_package/home_folder
 cp -rf .vim_runtime ~
 cd ~/.vim_runtime
 
