@@ -271,6 +271,7 @@ alias applypatch_patchfile_as_is='git am '
 alias applypatch_withcommitmesg='git am --signoff <  '
 alias applypatch_patchfile='patch -p1 < '
 
+alias show='git show '
 alias show_files_modifed_commitID='git show --pretty="" --name-only '
 
 function create_branch(){
