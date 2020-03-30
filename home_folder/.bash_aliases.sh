@@ -47,7 +47,7 @@ fi
 #################################################################
 # CD Aliases - Raspberry Pi
 #################################################################
-if [ "$HOSTNAME" = "raspberry" ]; then
+if [ "$HOSTNAME" = "raspberrypi" ]; then
 alias home='cd $HOME'
 fi
 
@@ -67,7 +67,7 @@ if [ "$HOSTNAME" = "UbuntuVirtualBox" ]; then
 alias ssh_key_gen='ssh-keygen -t rsa -b 4096 -C "softwares.unleashed@gmail.com"'
 fi
 
-if [ "$HOSTNAME" = "raspberry" ]; then
+if [ "$HOSTNAME" = "raspberrypi" ]; then
 alias ssh_key_gen='ssh-keygen -t rsa -b 4096 -C "softwares.unleashed@gmail.com"'
 fi
 
@@ -154,8 +154,7 @@ export PS1="\n\rUser:\[\033[1;92m\]\u\[\033[0m\]   Host:\[\033[1;92m\]\H\[\033[0
 #################################################################
 # Aliases go here
 #################################################################
-
-alias ls='ls -alhG'
+alias ls='ls -alhG --color=auto --show-control-chars'
 alias ll='ls -alhG'
 
 # --show-control-chars: help showing Korean or accented characters
@@ -169,16 +168,32 @@ alias cls='clear'
 alias finder='open .'
 alias back='cd -'
 
-# lock computer
-# =============
-alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
-
-# hibernation and sleep settings
-# ==============================
+# =======================================
+# hibernation / sleep / shutdown / reboot
+# =======================================
+if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
 alias hibernate='sudo pmset -a hibernatemode 25'
 alias sleep='sudo pmset -a hibernatemode 0'
 alias safesleep='sudo pmset -a hibernatemode 3'
 alias smartsleep='sudo pmset -a hibernatemode 2'
+fi
+
+if [ "$HOSTNAME" = "UbuntuVirtualBox" ]; then
+alias shutdown='shutdown -h now'
+alias shutdown_cancel='shutdown -c'
+alias reboot='shutdown -r now'
+alias halt='shutdown -H now'
+alias sleep='shutdown -s now'
+fi
+
+if [ "$HOSTNAME" = "raspberrypi" ]; then
+alias shutdown='shutdown -h now'
+alias shutdown_cancel='shutdown -c'
+alias reboot='shutdown -r now'
+alias halt='shutdown -H now'
+alias sleep='shutdown -s now'
+fi
+
 
 # up 'n' folders
 # ==============
@@ -220,7 +235,7 @@ alias pack='tar czf _archive_file.tar.gz '
 alias unpack='tar -xvzf '
 alias changefilemode644='chmod 644  '
 alias ll='ls -alrt'
-
+alias install_essentials='sudo apt-get install screen vim '
 
 # GIT Aliases
 # ===========
@@ -233,6 +248,7 @@ function reload(){
 
     source ~/support_package/home_folder/.bash_aliases.sh
 }
+
 alias gl='git log '
 alias gl_withfilechanges='git log --name-only '
 alias gl_withfileandcodechanges='git log -p '
@@ -268,7 +284,7 @@ alias co='git checkout '
 alias merge='git merge '
 alias fetch='git fetch '
 # rebase your current checked out branch with 'master' branch
-alias rebase='git rebase origin/master 'i
+alias rebase='git rebase origin/master '
 
 alias gabort='git am --abort'
 
@@ -319,4 +335,22 @@ function pull_all () {
     git checkout $START;
 };
 
+function set_git_user_name_email(){
+    USER_NAME=$1
+    USER_EMAIL=$2
+
+    if [ "$#" -ne 2 ]; then
+         echo "Illegal number of parameters"
+         echo "set_git_user_name_email "User Name" "User Email" "
+         exit 2
+    fi
+
+    echo $1
+    echo $2
+    git config user.email "$2"
+    git config user.name "$1"
+
+}
+  #git config --global user.email "you@example.com"
+  #git config --global user.name "Your Name"
 
