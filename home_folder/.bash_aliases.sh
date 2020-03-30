@@ -154,7 +154,7 @@ export PS1="\n\rUser:\[\033[1;92m\]\u\[\033[0m\]   Host:\[\033[1;92m\]\H\[\033[0
 #################################################################
 # Aliases go here
 #################################################################
-alias ls='ls -alhG --color=auto --show-control-chars'
+alias ls='ls -alhG'
 alias ll='ls -alhG'
 
 # --show-control-chars: help showing Korean or accented characters
