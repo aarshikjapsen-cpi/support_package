@@ -75,13 +75,15 @@ fi
 function ssh_key_copy_to_remotehost(){
     HOST_NAME_REMOTE=$1
 
-    if [ "$#" -ne 1 ]; then
+    if [ "$#" -ne 1 ];
+        then
            echo "Illegal number of parameters"
-           echo "ssh_key_copy_to_remotehost user@remote_hostname"
-           exit 2
-       fi
-
-    ssh-copy-id $HOST_NAME_REMOTE
+           echo "Usage :"
+           echo "$ ssh_key_copy_to_remotehost user@remote_hostname"
+           echo ""
+        else
+            ssh-copy-id $HOST_NAME_REMOTE
+    fi
 }
 
 
@@ -95,16 +97,18 @@ function copy_to_remote(){
     PATH_LOCAL=$2
     PATH_REMOTE=$3
 
-    if [ "$#" -ne 3 ]; then
-        echo "Illegal number of parameters"
-        echo "copy_to_remote user@remote_hostname local_file_name.txt remote_dir/"
-        exit 2
+    if [ "$#" -ne 3 ];
+        then
+            echo "Illegal number of parameters"
+            echo "Usage :"
+            echo "$ copy_to_remote user@remote_hostname local_file_name.txt remote_dir/"
+            echo ""
+        else
+            echo "Copying local file to remote path..."
+            echo "[ LOCAL ] $PATH_LOCAL ----> [ REMOTE ] $PATH_REMOTE"
+            echo ""
+            scp -r $PATH_LOCAL $HOST_NAME_REMOTE:$PATH_REMOTE
     fi
-
-    echo "Copying local file to remote path..."
-    echo "[ LOCAL ] $PATH_LOCAL ----> [ REMOTE ] $PATH_REMOTE"
-    echo ""
-    scp -r $PATH_LOCAL $HOST_NAME_REMOTE:$PATH_REMOTE
 }
 
 # Usage : copy_from_remote user@remote_hostname remote_path_file_name local_dir_path/
@@ -113,16 +117,18 @@ function copy_from_remote(){
     PATH_LOCAL=$3
     PATH_REMOTE=$2
 
-    if [ "$#" -ne 3 ]; then
-        echo "Illegal number of parameters"
-        echo "copy_from_remote user@remote_host remote_path_file_name local_dir_path/"
-        exit 2
+    if [ "$#" -ne 3 ];
+        then
+            echo "Illegal number of parameters"
+            echo "Usage :"
+            echo "$ copy_from_remote user@remote_host remote_path_file_name local_dir_path/"
+            echo ""
+        else
+            echo "Copying local file from remote path..."
+            echo "[ LOCAL ] $PATH_LOCAL <---- [ REMOTE ] $PATH_REMOTE"
+            echo ""
+            scp -r $HOST_NAME_REMOTE:$PATH_REMOTE $PATH_LOCAL
     fi
-
-    echo "Copying local file from remote path..."
-    echo "[ LOCAL ] $PATH_LOCAL <---- [ REMOTE ] $PATH_REMOTE"
-    echo ""
-    scp -r $HOST_NAME_REMOTE:$PATH_REMOTE $PATH_LOCAL
 }
 
 
@@ -240,6 +246,7 @@ alias install_essentials='sudo apt-get install screen vim '
 # GIT Aliases
 # ===========
 function reload(){
+    echo "Performing Update operation..."
     cp ~/support_package/home_folder/.screenrc ~
     cp ~/support_package/home_folder/.tmux.conf ~
 
@@ -247,6 +254,7 @@ function reload(){
     sh ~/support_package/home_folder/.vim_runtime/install_awesome_vimrc.sh
 
     source ~/support_package/home_folder/.bash_aliases.sh
+    echo "...Update Operation [ DONE ]."
 }
 
 alias gl='git log '
@@ -339,17 +347,18 @@ function set_git_user_name_email(){
     USER_NAME=$1
     USER_EMAIL=$2
 
-    if [ "$#" -ne 2 ]; then
-         echo "Illegal number of parameters"
-         echo "set_git_user_name_email "User Name" "User Email" "
-         exit 2
+    if [ "$#" -ne 2 ];
+        then
+            echo "Illegal number of parameters"
+            echo "Usage :"
+            echo "set_git_user_name_email "User Name" "User Email" "
+            echo ""
+        else
+            echo $1
+            echo $2
+            git config user.email "$2"
+            git config user.name "$1"
     fi
-
-    echo $1
-    echo $2
-    git config user.email "$2"
-    git config user.name "$1"
-
 }
   #git config --global user.email "you@example.com"
   #git config --global user.name "Your Name"
