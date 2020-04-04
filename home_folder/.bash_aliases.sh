@@ -229,6 +229,12 @@ alias screencreate_session_name='screen -S '
 alias screenrestore_session_name='screen -r '
 
 
+# Kernel Module
+# =============
+alias load_module='sudo insmod '
+alias unload_module='sudo rmmod '
+alias list_module='lsmod '
+
 # Misc Commands
 # =============
 alias v='vim '
@@ -241,7 +247,7 @@ alias pack='tar czf _archive_file.tar.gz '
 alias unpack='tar -xvzf '
 alias changefilemode644='chmod 644  '
 alias ll='ls -alrt'
-alias install_essentials='sudo apt-get install screen vim '
+alias install_essentials='sudo apt-get install screen vim build-essential libncurses-dev bison flex libssl-dev libelf-dev'
 
 # GIT Aliases
 # ===========
