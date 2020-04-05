@@ -36,6 +36,7 @@ fi
 # CD Aliases - Linux VM
 #################################################################
 if [ "$HOSTNAME" = "UbuntuVirtualBox" ]; then
+KERNEL=linux
 alias home='cd $HOME'
 alias rpi='cd $HOME/rpi/rpi_iot_kernel'
 alias linux='cd $HOME/rpi/rpi_iot_kernel/linux'
@@ -48,7 +49,26 @@ fi
 # CD Aliases - Raspberry Pi
 #################################################################
 if [ "$HOSTNAME" = "raspberrypi" ]; then
+KERNEL=linux
 alias home='cd $HOME'
+fi
+
+#################################################################
+# Linux Kernel Related stuff
+#################################################################
+if [ "$KERNEL" = "linux" ]; then
+# Kernel Module
+# =============
+alias load_module='sudo insmod '
+alias unload_module='sudo rmmod '
+alias list_module='lsmod '
+
+# Kernel Hacking
+# ==============
+alias update='sudo apt-get update '
+alias upgrade='sudo apt-get upgrade '
+alias install_initramfs='sudo update-initramfs -c -k '
+alias grub_update='sudo update-grub '
 fi
 
 
@@ -228,12 +248,6 @@ alias screenlist='screen -ls '
 alias screencreate_session_name='screen -S '
 alias screenrestore_session_name='screen -r '
 
-
-# Kernel Module
-# =============
-alias load_module='sudo insmod '
-alias unload_module='sudo rmmod '
-alias list_module='lsmod '
 
 # Misc Commands
 # =============
