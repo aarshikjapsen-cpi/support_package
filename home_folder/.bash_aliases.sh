@@ -262,7 +262,7 @@ alias pack='tar czf _archive_file.tar.gz '
 alias unpack='tar -xvzf '
 alias changefilemode644='chmod 644  '
 alias ll='ls -alrt'
-alias install_essentials='sudo apt-get install screen vim build-essential libncurses-dev bison flex libssl-dev libelf-dev'
+alias install_essentials='sudo apt-get install screen vim git build-essential libncurses-dev bison flex libssl-dev libelf-dev'
 
 # GIT Aliases
 # ===========
