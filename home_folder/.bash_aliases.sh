@@ -59,8 +59,8 @@ fi
 if [ "$KERNEL" = "linux" ]; then
 # Kernel Module
 # =============
-alias load_module='sudo insmod '
-alias unload_module='sudo rmmod '
+alias load='sudo insmod '
+alias unload='sudo rmmod '
 alias list_module='lsmod '
 
 # Kernel Hacking
@@ -92,6 +92,7 @@ alias ssh_key_gen='ssh-keygen -t rsa -b 4096 -C "softwares.unleashed@gmail.com"'
 fi
 
 # Alias to copy public key to remote host
+# HOST_NAME_REMOTE format => user@host_ip
 function ssh_key_copy_to_remotehost(){
     HOST_NAME_REMOTE=$1
 
