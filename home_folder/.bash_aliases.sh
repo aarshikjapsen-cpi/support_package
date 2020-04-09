@@ -263,6 +263,9 @@ alias unpack='tar -xvzf '
 alias changefilemode644='chmod 644  '
 alias ll='ls -alrt'
 alias install_essentials='sudo apt-get install screen vim git build-essential libncurses-dev bison flex libssl-dev libelf-dev'
+alias addr='ifconfig '
+alias log='dmesg '
+alias logtail='dmesg | tail '
 
 # GIT Aliases
 # ===========
