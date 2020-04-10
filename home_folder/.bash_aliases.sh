@@ -268,6 +268,33 @@ alias addr='ifconfig '
 alias log='dmesg '
 alias logtail='dmesg | tail '
 
+
+# Cscope Commands
+# =============
+function build_cscope_db_func()
+{
+     find $PWD -name *.c \
+            -o -name *.h \
+            -o -name *.mk \
+            -o -name *.xml\
+            -o -name *.cfg\
+            -o -name *.ini\
+            -o -name *.dat\
+            -o -name *.cpp > $PWD/cscope.files
+  cscope -RCbk
+  export CSCOPE_DB=$PWD/cscope.out
+}
+
+function cscope_export_db_func()
+{
+   export CSCOPE_DB=$PWD/cscope.out
+}
+
+alias csd='cscope -d'
+alias csr='cscope -R'
+alias csbuild=build_cscope_db_func
+alias csexport=cscope_export_db_func
+
 # GIT Aliases
 # ===========
 function reload(){
@@ -320,9 +347,6 @@ alias fetch='git fetch '
 alias rebase='git rebase origin/master '
 
 alias gabort='git am --abort'
-
-alias csd='cscope -d'
-alias csr='cscope -R'
 
 alias createpatch_all='git format-patch  origin/master --author priyanka --stdout >> patch_file.patch '
 alias cpl='git format-patch -n HEAD^'
