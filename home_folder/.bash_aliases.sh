@@ -48,6 +48,7 @@ alias interviewprep='cd $HOME/tmp/01_linux_learning'
 alias cp4k='cd $HOME/cp_src/emb-cphm400-build'
 alias chaps='cd $HOME/cp_src/emb-chaps'
 alias chui='cd $HOME/cp_src/emb-chui'
+alias sitara='cd $HOME/cp_src/emb-sitara-chaps'
 fi
 
 #################################################################
