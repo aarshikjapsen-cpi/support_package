@@ -78,6 +78,17 @@ alias install_initramfs='sudo update-initramfs -c -k '
 alias grub_update='sudo update-grub '
 fi
 
+#################################################################
+# Telnet Aliases
+#################################################################
+
+# ChargePoint Charging Stations
+# =============================
+alias telnet_station_172_16_251_43__2100='telnet 172.16.251.43 2100'
+alias telnet_station_172_16_251_42__2200='telnet 172.16.251.42 2200'
+
+
+
 
 #################################################################
 # SSH Aliases - check .ssh/config for IP address of Hosts
@@ -85,6 +96,10 @@ fi
 alias connect_rpi='ssh pi@rpi'
 alias connect_vm='ssh sudhanshu@vm'
 alias connect_mac='ssh sudhanshu@mac'
+
+# ChargePoint TFTP Server
+# =======================
+alias connect_tftp_cp='ssh sgupta@tftp_cp'
 
 if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
 alias ssh_key_gen='ssh-keygen -t rsa -b 4096 -C "softwares.unleashed@gmail.com"'
@@ -101,16 +116,17 @@ fi
 # Alias to copy public key to remote host
 # HOST_NAME_REMOTE format => user@host_ip
 function ssh_key_copy_to_remotehost(){
-    HOST_NAME_REMOTE=$1
+    KEY_FILE_PATH=$1
+    HOST_NAME_REMOTE=$2
 
-    if [ "$#" -ne 1 ];
+    if [ "$#" -ne 2 ];
         then
            echo "Illegal number of parameters"
            echo "Usage :"
-           echo "$ ssh_key_copy_to_remotehost user@remote_hostname"
+           echo "$ ssh_key_copy_to_remotehost key_file_path user@remote_hostname"
            echo ""
         else
-            ssh-copy-id $HOST_NAME_REMOTE
+            ssh-copy-id -i $KEY_FILE_PATH $HOST_NAME_REMOTE
     fi
 }
 
