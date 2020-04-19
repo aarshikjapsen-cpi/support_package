@@ -351,6 +351,7 @@ alias gstc='git stash clear '
 alias gstl='git stash list '
 
 alias pull='git pull '
+alias pull_recursive='git pull --recurse-submodules '
 alias push='git push '
 alias push_branchname='git push origin HEAD:origin/$1'
 alias forcepush_branchname='git push -f origin $1:$1'
