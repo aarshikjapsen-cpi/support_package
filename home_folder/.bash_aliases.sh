@@ -51,6 +51,7 @@ alias chui='cd $HOME/cp_src/emb-chui'
 alias sitara='cd $HOME/cp_src/emb-sitara-chaps'
 alias ct4k='cd $HOME/cp_src/emb-ct4k-chaps'
 alias cpnk='cd $HOME/cp_src/emb-cpnk'
+alias panda='cd $HOME/cp_src/emb-panda-dev'
 fi
 
 #################################################################
