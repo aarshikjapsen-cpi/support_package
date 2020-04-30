@@ -295,7 +295,7 @@ alias install_essentials='sudo apt-get install screen vim git cscope build-essen
 alias addr='ifconfig '
 alias log='dmesg '
 alias logtail='dmesg | tail '
-
+alias dump_to_file_cmd_output='$1 |& tee -a command_output.txt'
 
 # Cscope Commands
 # =============
