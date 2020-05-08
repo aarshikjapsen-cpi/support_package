@@ -86,9 +86,16 @@ fi
 
 # ChargePoint Charging Stations
 # =============================
-alias telnet_station_172_16_251_43__2100='telnet 172.16.251.43 2100'
-alias telnet_station_172_16_251_42__2200='telnet 172.16.251.42 2200'
-
+# CP-1
+alias telnet_CP1_172_16_251_43__2100='telnet 172.16.251.43 2100'
+# CP-2 - [ MAC : 0024b10000038794 ]
+alias telnet_CP2_172_16_251_42__2200='telnet 172.16.251.42 2200'
+alias telnet_CP2_172_16_250_70__23='telnet 172.16.250.70 23'
+# CP-3 - [ MAC : 0024b10000039f7e ]
+alias telnet_CP3_172_16_251_42__2400='telnet 172.16.251.42 2400'
+alias telnet_CP3_172_16_250_66__23='telnet 172.16.250.66 23'
+# CP-4 - [ MAC : 0024b100000385a3 ]
+alias telnet_CP4_172_16_251_31__2031='telnet 172.16.251.31 2031'
 
 
 
