@@ -23,8 +23,8 @@ CursorBlink=1
 
 // SESSION PROFILE: LAYOUT
 Dynamic=2
-WinWidth=98
-WinHeight=31
+WinWidth=148
+WinHeight=38
 BoldFont=no
 AntiAliasing=0
 CodePage=1252
@@ -139,11 +139,11 @@ AsciiCRLF=2
 
 // SESSION PROFILE: BUTTONS AND MACROS
 UserDesc#00="TFTP_server_172.16.250.23"
-UserDesc#01="CP_Station_172.16.251.43"
-UserDesc#02="CP_Station_172.16.251.42"
-UserDesc#03=""
-UserDesc#04=""
-UserDesc#05=""
+UserDesc#01="CP1_172.16.251.43:2100"
+UserDesc#02="CP2_172.16.251.42:2200"
+UserDesc#03="CP3_172.16.250.66:23"
+UserDesc#04="CP3_172.16.251.42:2400"
+UserDesc#05="CP4_172.16.251.31:2031"
 UserDesc#06=""
 UserDesc#07=""
 UserDesc#08=""
@@ -151,9 +151,9 @@ UserDesc#09=""
 UserDesc#10=""
 UserDesc#11=EOL
 UserIcon#00=""
-UserIcon#01=""
-UserIcon#02=""
-UserIcon#03=""
+UserIcon#01="0"
+UserIcon#02="0"
+UserIcon#03="0"
 UserIcon#04=""
 UserIcon#05=""
 UserIcon#06=""
@@ -165,9 +165,9 @@ UserIcon#11=EOL
 UserValue#00="^CALL=TFTP_server_172.16.250.23"
 UserValue#01="^CALL=CP_Station_172.16.251.43"
 UserValue#02="^CALL=CP_Station_172.16.251.42"
-UserValue#03=""
-UserValue#04=""
-UserValue#05=""
+UserValue#03="^CALL=CP_Station_172.16.250.66:23"
+UserValue#04="^CALL=CP3_172.16.251.42:2400"
+UserValue#05="^CALL=CP4_172.16.251.31:2031"
 UserValue#06=""
 UserValue#07=""
 UserValue#08=""
