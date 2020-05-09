@@ -97,6 +97,9 @@ alias telnet_CP3_172_16_250_66__23='telnet 172.16.250.66 23'
 # CP-4 - [ MAC : 0024b100000385a3 ]
 alias telnet_CP4_172_16_251_31__2031='telnet 172.16.251.31 2031'
 alias telnet_CP4_172_16_250_64__23='telnet 172.16.250.64 23'
+# CP5 - [ MAC : 0024b1000002ab86 ]
+alias telnet_CP5_172_16_251_41__2001='telnet 172.16.251.41 2001'
+alias telnet_CP5_172_16_250_31__23='telnet 172.16.250.31 23'
 
 
 
