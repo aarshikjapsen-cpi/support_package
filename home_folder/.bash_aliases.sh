@@ -197,8 +197,24 @@ function copy_from_remote(){
 export CLICOLOR=1
 
 # Show dirty state in prompt when in Git repos
-export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWUPSTREAM="auto"     # '<' behind, '>' ahead, '<>' diverged, '=' no difference
+export GIT_PS1_SHOWDIRTYSTATE=1        # staged '+', unstaged '*'
+export GIT_PS1_SHOWSTASHSTATE=1        # '$' something is stashed
+export GIT_PS1_SHOWUNTRACKEDFILES=1    # '%' untracked files
 
+# Invoke Git Prompt Enhancement script
+source ~/support_package/home_folder/.git-prompt.sh
+
+# To display git branch when inside a git repo
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# To display git tag when inside a git repo
+parse_git_tag() {
+    # get the tag currently, suppress error message if no tag is set in repo
+    git describe --tags --abbrev=0 2>/dev/null
+}
 
 # ################################################
 # Prompt Customization - Ref http://blog.taylormcgann.com/2012/06/13/customize-your-shell-command-prompt/
@@ -212,7 +228,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 # \[\033[1;92m\] - bold color green
 # \[\033[0m\]    - turn color off
 PS1_OLD=${PS1}
-export PS1="\n\rUser:\[\033[1;92m\]\u\[\033[0m\]   Host:\[\033[1;92m\]\H\[\033[0m\]  Date:\[\033[1;92m\]\d\[\033[0m\]   Time:\[\033[1;92m\]\t\[\033[0m\] \n\r\[\033[1;34m\]\!\[\033[0m\]  \[\033[1;35m\]\w\[\033[0m\] \n\r$ "
+export PS1='\n\r┌─ User:\[\033[1;92m\]\u\[\033[0m\]   Host:\[\033[1;92m\]\H\[\033[0m\]   Date:\[\033[1;92m\]\d\[\033[0m\]   Time:\[\033[1;92m\]\t\[\033[0m\]   \n\r|  Git:\[\033[1;92m\] $(__git_ps1) \[\033[0m\]   Branch:\[\033[1;92m\]$(parse_git_branch)\[\033[0m\]   Tag:\[\033[1;92m\]$(parse_git_tag)\[\033[0m\]  \n\r| \[\033[1;34m\] \!\[\033[0m\]  \[\033[1;35m\]\w\[\033[0m\] \n\r└─▶ $ '
 
 
 #################################################################
