@@ -14,6 +14,7 @@
 export EXCHANGE_FOLDER=$HOME/support_package/exchange_folder
 alias exchange='cd $EXCHANGE_FOLDER'
 alias support_package='cd $HOME/support_package'
+alias tmp='cd $HOME/tmp'
 
 
 #################################################################
