@@ -45,7 +45,7 @@ alias support='cd $HOME/rpi/rpi_iot_kernel/support'
 alias interviewprep='cd $HOME/tmp/01_linux_learning'
 
 #ChargePoint Specific
-alias cp4k='cd $HOME/cp_src/emb-cphm400-build'
+alias cp4k='cd $HOME/cp_src/cp4k'
 alias chaps='cd $HOME/cp_src/emb-chaps'
 alias chui='cd $HOME/cp_src/emb-chui'
 alias sitara='cd $HOME/cp_src/emb-sitara-chaps'
