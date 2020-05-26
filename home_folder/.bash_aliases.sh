@@ -331,6 +331,23 @@ alias log='dmesg '
 alias logtail='dmesg | tail '
 alias dump_to_file_cmd_output='$1 |& tee -a command_output.txt'
 
+# Find command shortcut
+function f(){
+    FILE_NAME_OR_EXPRESSION=$1
+
+
+    if [ "$#" -ne 1 ];
+        then
+           echo "Illegal number of parameters"
+           echo "Usage :"
+           echo "$ f file_name_or_expression_to_search"
+           echo ""
+        else
+            find . -name "$FILE_NAME_OR_EXPRESSION"
+    fi
+}
+
+
 # Cscope Commands
 # =============
 function build_cscope_db_func()
