@@ -427,6 +427,22 @@ alias fetch='git fetch '
 # rebase your current checked out branch with 'master' branch
 alias rebase='git rebase origin/master '
 
+# Squash multicommits to single commit interactively
+function squash_to_commitID(){
+    START_COMMIT_ID=$1
+
+    if [ "$#" -ne 1 ];
+        then
+            echo "Illegal number of parameters"
+            echo "Usage :"
+            echo "$0 base_commit_id"
+            echo "base_commit_id - commit id on which all multiple commits would be squashed onto single commit"
+            echo ""
+        else
+            git rebase --interactive "$1"
+    fi
+}
+
 alias gabort='git am --abort'
 
 alias createpatch_all='git format-patch  origin/master --author priyanka --stdout >> patch_file.patch '
