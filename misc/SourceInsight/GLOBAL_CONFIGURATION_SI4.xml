@@ -84,7 +84,7 @@
 		<OverviewOptions
 			IsVisible="0"
 			IsLocked="0"
-			ShowCurFunction="0"
+			ShowCurFunction="1"
 			ShowFunctions="0"
 			ShowBookmarks="1"
 			ShowSourceTips="1"
@@ -113,9 +113,9 @@
 		BounceParens="1"
 		KeepCursorInWindow="1"
 		UseBlockCursor="0"
-		UseSmartTab="0"
-		TabIndentsLine="0"
-		TabReplacesSelection="1"
+		UseSmartTab="1"
+		TabIndentsLine="1"
+		TabReplacesSelection="0"
 		IndentPreprocStatments="0"
 		UseSmartPaste="1"
 		SelectLinesAfterPaste="1"
@@ -123,9 +123,9 @@
 		UseAutoComplete="1"
 		AutoCompleteDetailMode="1"
 		AutoCompleteInsertParams="1"
-		AutoCompleteInComments="0"
+		AutoCompleteInComments="1"
 		AutoCompleteCaseSens="0"
-		AutoCompleteTabCompletes="0"
+		AutoCompleteTabCompletes="1"
 		AutoCompleteSpaceAfterFunction="0"
 		AutoCompleteSpaceBetweenParams="1"
 		ListboxFilterFragments="1"
@@ -177,7 +177,7 @@
 		<Item Name="ChangeMarks" Color="#ffff00" />
 		<Item Name="SavedChangeMarks" Color="#bdddba" />
 		<Item Name="CurrentLineIndicator" Color="#e6e6e6" />
-		<Item Name="EndofFile" Color="#bcd6dc" />
+		<Item Name="EndofFile" Color="#c0c0c0" />
 		<Item Name="ApplicationBackground" Color="#808080" />
 		<Item Name="FrameText" Color="#000000" />
 		<Item Name="FrameBackground" Color="#dbe2ea" />
@@ -209,7 +209,7 @@
 		SearchProjectPath="1"
 		SearchImportLibs="1"
 		AlwaysSearchProjectPath="0"
-		ParseBeforeLookup="0"
+		ParseBeforeLookup="1"
 		SearchOnlyProjectFiles="0"
 		MatchAllLanguages="0"
 		>
@@ -425,6 +425,10 @@
 	</Menus>
 	<Keymaps>
 		<Main>
+			<item Command="Beginning Of Line" Keycode="(A)Left" />
+			<item Command="End Of Line" Keycode="(A)Right" />
+			<item Command="Go To Previous Link" Keycode="(S)F9" />
+			<item Command="Go To Next Link" Keycode="F9" />
 			<item Command="Complete Symbol" Keycode="(C)8" />
 			<item Command="Activate Project Symbol List" Keycode="F7" />
 			<item Command="Activate Project Symbol List" Keycode="(A)G" />
@@ -435,7 +439,6 @@
 			<item Command="Enter" Keycode="Enter" />
 			<item Command="Symbol Info..." Keycode="(C)mouse(R+SEL)" />
 			<item Command="Select To" Keycode="(S)mouse(L)" />
-			<item Command="Copy" Keycode="mouse(LR)" />
 			<item Command="Redraw Screen" Keycode="(CA)Space" />
 			<item Command="Paste From Clip..." Keycode="(C)Ins" />
 			<item Command="Copy To Clip..." Keycode="(C)Del" />
@@ -515,8 +518,6 @@
 			<item Command="Bottom Of File" Keycode="(C)End" />
 			<item Command="Top Of File" Keycode="(CN)Home" />
 			<item Command="Top Of File" Keycode="(C)Home" />
-			<item Command="Scroll Right" Keycode="(A)Right" />
-			<item Command="Scroll Left" Keycode="(A)Left" />
 			<item Command="Scroll Line Down" Keycode="(A)Down" />
 			<item Command="Scroll Line Up" Keycode="(A)Up" />
 			<item Command="Scroll Half Page Up" Keycode="(CN)PgUp" />
@@ -567,7 +568,6 @@
 			<item Command="Stop Recording" Keycode="(C)F2" />
 			<item Command="Start Recording" Keycode="(C)F1" />
 			<item Command="Show File Status" Keycode="(S)F10" />
-			<item Command="Go To Next Link" Keycode="(S)F9" />
 			<item Command="Highlight Word" Keycode="(S)F8" />
 			<item Command="Select Sentence" Keycode="(S)F7" />
 			<item Command="Select Line" Keycode="(S)F6" />
@@ -586,7 +586,6 @@
 			<item Command="Mono Font View" Keycode="(A)F12" />
 			<item Command="Incremental Search..." Keycode="F12" />
 			<item Command="Indent Right" Keycode="F10" />
-			<item Command="Indent Left" Keycode="F9" />
 			<item Command="Browse Local File Symbols..." Keycode="F8" />
 			<item Command="Tile Two Windows" Keycode="F6" />
 			<item Command="Search Forward" Keycode="F4" />
@@ -953,19 +952,19 @@
 			EmulateScreenFontsForPrinting="1"
 			LineUpWhiteSpace="1"
 			VisibleTabs="1"
-			VisibleSpaces="0"
+			VisibleSpaces="1"
 			ShowLineNumbers="1"
 			ShowRightMargin="1"
 			ShowPageBreaks="0"
 			UseSymbolPane="0"
 			UseOverview="0"
 			AllowAutocomplete="1"
-			AllowSmartPaste="0"
+			AllowSmartPaste="1"
 			AllowSnippets="1"
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="100"
-			IndentWidth="1"
+			IndentWidth="0"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="1"
@@ -1058,19 +1057,19 @@
 			EmulateScreenFontsForPrinting="1"
 			LineUpWhiteSpace="1"
 			VisibleTabs="1"
-			VisibleSpaces="0"
+			VisibleSpaces="1"
 			ShowLineNumbers="1"
 			ShowRightMargin="1"
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
-			UseOverview="1"
+			UseOverview="0"
 			AllowAutocomplete="1"
 			AllowSmartPaste="1"
 			AllowSnippets="1"
 			ShowRefHighlights="0"
 			TabWidth="4"
-			MarginWidth="80"
-			IndentWidth="1"
+			MarginWidth="100"
+			IndentWidth="0"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
@@ -1085,7 +1084,7 @@
 			FileFilter="*.c;*.h;*.cpp;*.hpp;*.cc;*.cxx;*.hxx;*.hh"
 			Language="C/C++ Language"
 			ParsePattern=""
-			WordWrap="1"
+			WordWrap="0"
 			ExpandTabs="1"
 			EnterKeyIsEOL="1"
 			StatusbarMode="0"
@@ -1099,14 +1098,14 @@
 			ShowPageBreaks="0"
 			UseSymbolPane="1"
 			UseOverview="0"
-			AllowAutocomplete="0"
-			AllowSmartPaste="0"
-			AllowSnippets="0"
+			AllowAutocomplete="1"
+			AllowSmartPaste="1"
+			AllowSnippets="1"
 			ShowRefHighlights="0"
 			TabWidth="4"
-			MarginWidth="80"
-			IndentWidth="1"
-			AutoInsertPairs="0"
+			MarginWidth="100"
+			IndentWidth="0"
+			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
 			IndentOpenBrace="1"
@@ -1140,7 +1139,7 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="4"
+			IndentWidth="0"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
@@ -2030,11 +2029,22 @@
 		StyleAppVer="4.00.0114"
 		>
 		<Style Name="Default Text" TextColor="#000000" />
-		<Style Name="Number" TextColor="#ff0000" />
+		<Style
+			Name="Number"
+			TextColor="#ff0000"
+			FontName="Consolas"
+			FontPitchFamily="1"
+			FontCharset="6"
+			/>
 		<Style Name="Operator" TextColor="#008000" />
-		<Style Name="Delimiter" TextColor="#800080" KeepWithNextLine="1" />
+		<Style Name="Delimiter" TextColor="#800080" />
 		<Style Name="Comment" TextColor="#800080" />
-		<Style Name="String" TextColor="#000080" BackColor="#ffffbb" />
+		<Style
+			Name="String"
+			TextColor="#000080"
+			FixedWhiteSpace="0"
+			BackColor="#ffffbb"
+			/>
 		<Style Name="Keyword" TextColor="#008000" />
 		<Style Name="Control" TextColor="#000080" Bold="1" />
 		<Style Name="Special" TextColor="#800080" Bold="1" Italic="1" />
@@ -2045,12 +2055,18 @@
 		<Style Name="Declaration" Bold="1" TextColor="#000080" />
 		<Style
 			Name="Ref To Local"
-			TextColor="#008080"
 			ParentStyle="Reference"
+			TextColor="#008080"
 			/>
 		<Style Name="Reference" TextColor="#008000" />
 		<Style Name="Directive" ParentStyle="Control" />
-		<Style Name="Line Number" TextColor="#808080" />
+		<Style
+			Name="Line Number"
+			FontName="Consolas"
+			FontPitchFamily="1"
+			FontCharset="6"
+			TextColor="#c0c0c0"
+			/>
 		<Style
 			Name="Highlight"
 			TextColor="#000000"
@@ -2061,23 +2077,24 @@
 			Name="Symbol Characters"
 			FontName="Microsoft Sans Serif"
 			FontPitchFamily="0"
-			FontCharset="0"
+			FontCharset="6"
+			ParentStyle="Operator"
 			/>
 		<Style
 			Name="Declare Template Parameter"
-			Underline="Single"
 			ParentStyle="Declaration"
+			Underline="Single"
 			/>
-		<Style Name="Ref to Parameter" Bold="1" ParentStyle="Ref To Local" />
+		<Style Name="Ref to Parameter" ParentStyle="Ref To Local" Bold="1" />
 		<Style Name="Declare Template" ParentStyle="Declare Function" />
 		<Style Name="Declare Package" ParentStyle="Declaration" />
 		<Style Name="Ref to Template" ParentStyle="Reference" />
 		<Style Name="Ref to Package" ParentStyle="Reference" />
 		<Style
 			Name="Ref to Template Parameter"
+			ParentStyle="Reference"
 			Underline="Single"
 			Bold="1"
-			ParentStyle="Reference"
 			/>
 		<Style Name="Selection" TextColor="#ffffff" BackColor="#000080" />
 		<Style Name="Declare Namespace" ParentStyle="Declaration" />
@@ -2088,22 +2105,22 @@
 		<Style Name="Declare Method Inline" ParentStyle="Declare Function" />
 		<Style
 			Name="Declare Function"
-			Scale="150"
+			ParentStyle="Declaration"
+			Scale="140"
 			ShadowColor="#c0c0c0"
 			KeepWithNextLine="1"
-			ParentStyle="Declaration"
 			/>
 		<Style Name="Declare Macro" ParentStyle="Declaration" />
 		<Style
 			Name="Declare Struct"
-			Scale="120"
+			ParentStyle="Declaration"
+			Scale="140"
 			ShadowColor="#c0c0c0"
 			KeepWithNextLine="1"
-			ParentStyle="Declaration"
 			/>
 		<Style Name="Declare Union" ParentStyle="Declare Struct" />
 		<Style Name="Declare Typedef" ParentStyle="Declare Struct" />
-		<Style Name="Declare Class" Scale="120" ParentStyle="Declare Struct" />
+		<Style Name="Declare Class" ParentStyle="Declare Struct" Scale="120" />
 		<Style Name="Declare Var" ParentStyle="Declaration" />
 		<Style Name="Declare Constant" ParentStyle="Declaration" />
 		<Style Name="Declare Enum" ParentStyle="Declare Struct" />
@@ -2113,108 +2130,103 @@
 		<Style Name="Preprocessor" ParentStyle="Declaration" />
 		<Style
 			Name="Search Result Heading"
+			ParentStyle="Declaration"
 			Bold="1"
 			Underline="Single"
-			ParentStyle="Declaration"
 			/>
 		<Style
 			Name="Label"
+			ParentStyle="Declaration"
 			TextColor="#ff0000"
 			Scale="110"
 			Underline="Single"
-			ParentStyle="Declaration"
 			/>
 		<Style Name="Declare Interface" ParentStyle="Declare Class" />
 		<Style Name="Declare Resource" ParentStyle="Declaration" />
 		<Style Name="File" ParentStyle="Declaration" />
 		<Style Name="Declare Custom Tag" ParentStyle="Declaration" />
-		<Style Name="Ref to Func" Bold="1" ParentStyle="Reference" />
+		<Style Name="Ref to Func" ParentStyle="Reference" Bold="1" />
 		<Style Name="Ref to Macro" ParentStyle="Ref to Func" />
 		<Style Name="Ref to Struct" ParentStyle="Reference" />
-		<Style Name="Ref to Union" ParentStyle="Reference" />
-		<Style Name="Ref to Typedef" ParentStyle="Reference" />
+		<Style Name="Ref to Union" ParentStyle="Ref to Struct" />
+		<Style Name="Ref to Typedef" ParentStyle="Ref to Struct" />
 		<Style
 			Name="Ref to Global Var"
+			ParentStyle="Reference"
 			Bold="1"
 			Italic="1"
 			TextColor="#800080"
-			ParentStyle="Reference"
 			/>
 		<Style
 			Name="Ref to Const"
-			TextColor="#ff0000"
 			ParentStyle="Reference"
+			TextColor="#ff0000"
 			/>
 		<Style Name="Ref to Enum" ParentStyle="Reference" />
 		<Style Name="Ref to Custom" ParentStyle="Reference" />
 		<Style Name="Ref to EdMacro" ParentStyle="Reference" />
-		<Style Name="Ref to Class" ParentStyle="Reference" />
-		<Style Name="Ref to Method" ParentStyle="Reference" />
+		<Style Name="Ref to Class" ParentStyle="Ref to Struct" />
+		<Style Name="Ref to Method" ParentStyle="Ref to Func" />
 		<Style Name="Ref to EnumConst" ParentStyle="Ref to Const" />
 		<Style Name="Ref to Proto" ParentStyle="Ref to Func" />
 		<Style Name="Ref to Preproc" ParentStyle="Reference" />
 		<Style Name="Ref to Search" ParentStyle="Reference" />
 		<Style Name="Ref to Label" ParentStyle="Reference" />
 		<Style Name="Ref to Member" ParentStyle="Reference" />
-		<Style Name="Ref to Interface" ParentStyle="Reference" />
+		<Style Name="Ref to Interface" ParentStyle="Ref to Class" />
 		<Style Name="Ref to Resource" ParentStyle="Reference" />
 		<Style Name="Ref to File" ParentStyle="Reference" />
 		<Style
 			Name="Comment Heading 1"
+			ParentStyle="Comment"
 			Bold="1"
 			Scale="150"
 			Underline="Thick"
-			FontName="Arial"
+			FontName="Segoe UI"
 			FontPitchFamily="2"
 			FontCharset="0"
-			ParentStyle="Comment"
 			/>
 		<Style
 			Name="Comment Heading 2"
+			ParentStyle="Comment"
 			Bold="1"
 			Scale="130"
 			Underline="Single"
-			FontName="Arial"
+			FontName="Segoe UI"
 			FontPitchFamily="2"
 			FontCharset="0"
-			ParentStyle="Comment"
 			/>
 		<Style
 			Name="Comment Heading 3"
+			ParentStyle="Comment"
 			Bold="1"
 			Scale="120"
-			FontName="Arial"
+			FontName="Segoe UI"
 			FontPitchFamily="2"
 			FontCharset="0"
-			ParentStyle="Comment"
 			/>
 		<Style
 			Name="Comment Heading 4"
+			ParentStyle="Comment"
 			Bold="1"
-			FontName="Arial"
+			FontName="Segoe UI"
 			FontPitchFamily="2"
 			FontCharset="0"
-			ParentStyle="Comment"
 			/>
-		<Style
-			Name="Comment Right"
-			Scale="90"
-			Italic="1"
-			ParentStyle="Comment"
-			/>
+		<Style Name="Comment Right" ParentStyle="Comment" Italic="1" />
 		<Style Name="Ref to Base Class" ParentStyle="Reference" />
 		<Style Name="Ref to Inline Type" ParentStyle="Reference" />
 		<Style Name="Inactive Code" TextColor="#808080" />
 		<Style
 			Name="Declare Parameter"
-			Underline="Single"
 			ParentStyle="Declaration"
+			Underline="Single"
 			/>
 		<Style
 			Name="Auto Annotations"
+			ParentStyle="Comment"
 			Scale="90"
 			TextColor="#808080"
-			ParentStyle="Comment"
 			/>
 		<Style Name="HTML or XML Element" />
 		<Style
@@ -2230,46 +2242,51 @@
 		<Style Name="Ref to Method Prototype" ParentStyle="Ref to Method" />
 		<Style
 			Name="Comment To Do"
+			ParentStyle="Comment"
 			Bold="1"
 			Scale="120"
 			BackColor="#ffff00"
-			FontName="Arial"
+			FontName="Segoe UI"
 			FontPitchFamily="2"
 			FontCharset="0"
-			ParentStyle="Comment"
 			/>
 		<Style Name="Ref to IDL Module" ParentStyle="Reference" />
 		<Style Name="Ref to IDL Library" ParentStyle="Reference" />
 		<Style
 			Name="Declare IDL Module"
+			ParentStyle="Declaration"
 			Scale="150"
 			ShadowColor="#c0c0c0"
 			KeepWithNextLine="1"
-			ParentStyle="Declaration"
 			/>
 		<Style
 			Name="Declare IDL Library"
+			ParentStyle="Declaration"
 			Scale="150"
 			ShadowColor="#c0c0c0"
 			KeepWithNextLine="1"
-			ParentStyle="Declaration"
 			/>
 		<Style Name="Comment Single Line" ParentStyle="Comment" />
 		<Style Name="Comment Multi Line" ParentStyle="Comment" />
 		<Style Name="Parentheses" ParentStyle="Delimiter" />
 		<Style Name="HTML Body Text" FixedWhiteSpace="0" />
-		<Style Name="HTML Tag" TextColor="#800080" />
+		<Style Name="HTML Tag" TextColor="#008000" Bold="1" />
 		<Style Name="Standard Property" ParentStyle="Ref to Member" />
 		<Style Name="Standard Function" ParentStyle="Ref to Func" />
 		<Style Name="Standard Object" ParentStyle="Ref to Class" />
 		<Style
 			Name="Declare CSS Selector"
-			Scale="120"
 			ParentStyle="Declaration"
+			Scale="120"
 			/>
 		<Style Name="Declare C# Property" ParentStyle="Declaration" />
 		<Style Name="Ref to C# Property" ParentStyle="Reference" />
-		<Style Name="Mono Font View" />
+		<Style
+			Name="Mono Font View"
+			FontName="Consolas"
+			FontPitchFamily="1"
+			FontCharset="6"
+			/>
 		<Style Name="Declare C# Event" ParentStyle="Declaration" />
 		<Style Name="Declare C# Indexer" ParentStyle="Declaration" />
 		<Style Name="Ref to C# Event" ParentStyle="Reference" />
@@ -2279,14 +2296,14 @@
 		<Style Name="CDATA Section" TextColor="#808080" />
 		<Style
 			Name="Declare Type Parameter"
-			Underline="Single"
 			ParentStyle="Declaration"
+			Underline="Single"
 			/>
 		<Style
 			Name="Ref to Type Parameter"
+			ParentStyle="Reference"
 			Underline="Single"
 			Bold="1"
-			ParentStyle="Reference"
 			/>
 		<Style
 			Name="Snippet Input Field"
@@ -2309,30 +2326,30 @@
 			/>
 		<Style
 			Name="Declare VHDL Entity"
+			ParentStyle="Declaration"
 			Scale="140"
 			ShadowColor="#c0c0c0"
 			KeepWithNextLine="1"
-			ParentStyle="Declaration"
 			/>
 		<Style
 			Name="Declare VHDL Architecture"
+			ParentStyle="Declaration"
 			Scale="140"
 			ShadowColor="#c0c0c0"
 			KeepWithNextLine="1"
-			ParentStyle="Declaration"
 			/>
 		<Style
 			Name="Declare VHDL Component"
+			ParentStyle="Declaration"
 			ShadowColor="#c0c0c0"
 			KeepWithNextLine="1"
-			ParentStyle="Declaration"
 			/>
 		<Style Name="Declare VHDL Process" ParentStyle="Declare Function" />
 		<Style
 			Name="Declare VHDL Config"
+			ParentStyle="Declaration"
 			ShadowColor="#c0c0c0"
 			KeepWithNextLine="1"
-			ParentStyle="Declaration"
 			/>
 		<Style Name="Ref to VHDL Entity" ParentStyle="Reference" />
 		<Style Name="Ref to VHDL Architecture" ParentStyle="Reference" />
@@ -7616,73 +7633,73 @@
 		<MainToolbar>
 			<Toolbars>
 				<Toolbar
+					Name="Layout"
+					Width="119"
+					Ordinal="0"
+					IsVisible="0"
+					NewRow="0"
+					/>
+				<Toolbar
 					Name="Browse"
 					Width="64"
-					Ordinal="0"
+					Ordinal="1"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="File"
 					Width="168"
-					Ordinal="1"
+					Ordinal="2"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Edit"
 					Width="144"
-					Ordinal="2"
+					Ordinal="3"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Search"
 					Width="160"
-					Ordinal="3"
+					Ordinal="4"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Navigation"
 					Width="112"
-					Ordinal="4"
+					Ordinal="5"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Symbols"
 					Width="136"
-					Ordinal="5"
+					Ordinal="6"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Window"
-					Width="112"
-					Ordinal="6"
+					Width="49"
+					Ordinal="7"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Help"
 					Width="64"
-					Ordinal="7"
+					Ordinal="8"
 					IsVisible="0"
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="View"
-					Width="280"
-					Ordinal="8"
-					IsVisible="1"
-					NewRow="0"
-					/>
-				<Toolbar
-					Name="Source Control"
-					Width="146"
+					Name="Outline"
+					Width="250"
 					Ordinal="9"
-					IsVisible="1"
+					IsVisible="0"
 					NewRow="0"
 					/>
 				<Toolbar
@@ -7693,15 +7710,15 @@
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="Outline"
-					Width="112"
+					Name="Source Control"
+					Width="234"
 					Ordinal="11"
-					IsVisible="1"
-					NewRow="0"
+					IsVisible="0"
+					NewRow="1"
 					/>
 				<Toolbar
-					Name="Layout"
-					Width="160"
+					Name="View"
+					Width="392"
 					Ordinal="12"
 					IsVisible="1"
 					NewRow="0"
