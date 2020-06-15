@@ -53,11 +53,11 @@
 			CascadeNewWindows="1"
 			ShowProjectInWorkspace="1"
 			ShowOutlineHover="1"
-			AlwaysShowOutlineMarks="0"
-			OutlineIndent="0"
+			AlwaysShowOutlineMarks="1"
+			OutlineIndent="1"
 			OutlineAllBlocks="1"
 			ShowNestingLines="1"
-			ShowCurLineMarker="0"
+			ShowCurLineMarker="1"
 			PanelToolbarBottom="1"
 			ShowSearchBar="0"
 			ShowSearchProjBar="0"
@@ -118,7 +118,7 @@
 		TabReplacesSelection="1"
 		IndentPreprocStatments="0"
 		UseSmartPaste="1"
-		SelectLinesAfterPaste="1"
+		SelectLinesAfterPaste="0"
 		SelectAfterPaste="End"
 		UseAutoComplete="1"
 		AutoCompleteDetailMode="1"
@@ -1100,7 +1100,7 @@
 			UseSymbolPane="1"
 			UseOverview="0"
 			AllowAutocomplete="1"
-			AllowSmartPaste="1"
+			AllowSmartPaste="0"
 			AllowSnippets="1"
 			ShowRefHighlights="0"
 			TabWidth="4"
@@ -1140,7 +1140,7 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="0"
+			IndentWidth="1"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
@@ -7534,7 +7534,7 @@
 		<SearchDialogs>
 			<Search
 				RegexType="Source Insight"
-				IgnoreCase="0"
+				IgnoreCase="1"
 				UseRegexp="0"
 				WrapAround="1"
 				SelectMatch="1"
@@ -7634,57 +7634,57 @@
 		<MainToolbar>
 			<Toolbars>
 				<Toolbar
+					Name="Window"
+					Width="135"
+					Ordinal="0"
+					IsVisible="1"
+					NewRow="0"
+					/>
+				<Toolbar
 					Name="Layout"
 					Width="119"
-					Ordinal="0"
+					Ordinal="1"
 					IsVisible="0"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Browse"
 					Width="64"
-					Ordinal="1"
+					Ordinal="2"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="File"
 					Width="168"
-					Ordinal="2"
+					Ordinal="3"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Edit"
 					Width="144"
-					Ordinal="3"
+					Ordinal="4"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Search"
 					Width="160"
-					Ordinal="4"
-					IsVisible="1"
-					NewRow="0"
-					/>
-				<Toolbar
-					Name="Navigation"
-					Width="112"
 					Ordinal="5"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="Symbols"
-					Width="136"
+					Name="Navigation"
+					Width="102"
 					Ordinal="6"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="Window"
-					Width="49"
+					Name="Symbols"
+					Width="135"
 					Ordinal="7"
 					IsVisible="1"
 					NewRow="0"
@@ -7719,7 +7719,7 @@
 					/>
 				<Toolbar
 					Name="View"
-					Width="392"
+					Width="905"
 					Ordinal="12"
 					IsVisible="1"
 					NewRow="0"
