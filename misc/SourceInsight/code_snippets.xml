@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceInsightCodeSnippets
+	AppVer="4.00.0114"
+	AppVerMinReader="4.00.0019"
+	>
+	<SnippetList>
+		<Snippet
+			Name="case"
+			Description="case label"
+			Language="C Family"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>case $label$:
+    $end$
+    break;
+
+</Snippet>
+		<Snippet
+			Name="convert_to_string_and_compare"
+			Description="convert string integers to integers and compare"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			># convert from string to integer
+INT_VAR1=$(expr $STR_VAR1)
+INT_VAR2=$(expr $STR_VAR2)
+
+
+# now compare two integers.
+if [ $INT_VAR1 -gt $INT_VAR2 ]; then
+    echo "INT1 is greater"
+else
+    echo "INT2 is greater"
+fi
+
+</Snippet>
+		<Snippet
+			Name="dowh"
+			Description="do while loop"
+			Language="All with { }"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>do {
+    $block$
+} while ($condition$);
+
+</Snippet>
+		<Snippet
+			Name="file_exist_check"
+			Description="Checks if a given file exists"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			># Check if file exist and do action
+if [ -f "$FILEPATH" ]; then
+    # File exists
+    FIRST_EXISTS=1
+else
+    # File does not exists
+    FILE_EXISTS=0
+fi
+</Snippet>
+		<Snippet
+			Name="for"
+			Description="for loop"
+			Language="All with { }"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[int index = 0;
+for (index = $start$; index < $limit$; index++) {
+    $end$
+}
+]]></Snippet>
+		<Snippet
+			Name="forsur"
+			Description="surround with for loop"
+			Language="C Family"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[for ($i$ = $start$; $i$ < $limit$; ++$i$) {
+    $selection$
+}
+]]></Snippet>
+		<Snippet
+			Name="get_ts_in_epoch"
+			Description="Timestamp of file passed in EPOCs."
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[################################################################
+# Usage : variable=get_ts_in_epoch <filename>
+# Returns : Timestamp of file passed in EPOCs.
+################################################################
+get_ts_in_epoch()
+{
+    echo "`stat -t $1 | cut -d " " -f13`"
+}
+
+
+# Get the current timestamp of  file in epochs (linux unit to measure time)
+EPOCH_VALUE=`get_ts_in_epoch $FILE_NAME`
+
+]]></Snippet>
+		<Snippet
+			Name="grep_zip_file"
+			Description="scans a gz file for STRING_PATTERN and return count of lines"
+			Language="JSON"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[
+################################################################
+# Usage : grep_zip_file <filename>
+# Returns : whole contents of file into a variable
+################################################################
+grep_zip_file()
+{
+    local FILE_GZ=$1
+    local STRING_TO_CHECK=$2
+
+    # grep -c -- returns the line count of occurances in the file
+    return `zcat $FILE_GZ | grep -c $STRING_TO_CHECK`
+}
+
+# Add this line in script anywhere to scan for contents of a zip file with a string pattern
+ERR_LINE_COUNT=grep_zip_file /var/log/messages.gz" "MM_1_ERR"
+
+]]></Snippet>
+		<Snippet
+			Name="if"
+			Description="if block"
+			Language="All with { }"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>if ($i$) {
+    $end$
+}
+</Snippet>
+		<Snippet
+			Name="ife"
+			Description="if-else block"
+			Language="All with { }"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>if ($i$) {
+    $trueblock$
+} else {
+    $falseblock$
+}
+</Snippet>
+		<Snippet
+			Name="ifsur"
+			Description="surround with if block"
+			Language="All with { }"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>if ($i$)
+	{
+	$selection$
+	}
+</Snippet>
+		<Snippet
+			Name="ignore_command_output"
+			Description="ignores commands output by redirecting to null device"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[$command$ 2> /dev/null
+]]></Snippet>
+		<Snippet
+			Name="param_count_check"
+			Description="check parameter count passed to script"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			># $# returns the number of parameters passed to script
+EXPECTED_PARAM=1    # Change to expected param count
+if [ $# -lt $EXPECTED_PARAM ]; then
+    # Call usage 
+    # or 
+    # Do whatever you want to do if param count isn't as expected 
+fi
+
+</Snippet>
+		<Snippet
+			Name="print_usage"
+			Description="Print Usage if parameters are less than a count"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[usage() {
+    echo ""
+    echo "Usage: $0 <PARAM1> <PARAM2>"
+    echo ""
+    echo "    PARAM1:    Describe param 1"
+    echo "    PARAM2:   Describe param 2"
+    echo ""
+}
+
+EXPECTED_PARAM_COUNT=5
+# $# returns the number of parameters supplied
+if [ $# -lt $EXPECTED_PARAM_COUNT ]; then
+    usage
+    exit
+fi
+
+]]></Snippet>
+		<Snippet
+			Name="read_from_file"
+			Description="reads file and returns contents of file"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[################################################################
+# Usage : read_from_file <filename>
+# Returns : whole contents of file into a variable
+################################################################
+read_from_file()
+{
+    local FILENAME=$1
+    local VALUE=`/bin/cat $FILENAME`
+
+    echo $VALUE
+}
+
+
+
+# Read contents of a file
+# Place this line where you want to read contents from
+FILE_CONTENTS=`read_from_file $FILEPATH`
+
+]]></Snippet>
+		<Snippet
+			Name="redirect_command_err_to_log_file"
+			Description="redirects the error encountered during command executio to log file"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[# Redirects the command error to a $LOG_FILE
+local VALUE=`/bin/cat $SOME_FILENAME 2>>$LOG_FILE &1>>$LOG_FILE`
+
+]]></Snippet>
+		<Snippet
+			Name="switch_case"
+			Description="switch case block"
+			Language="C/C++, C#"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>switch ($value$) {
+    case $label$:
+        break;
+    case $label$:
+        break;
+    case $label$:
+        break;
+    case $label$:
+        break;
+    default:
+        break;
+}
+</Snippet>
+		<Snippet
+			Name="wait_for_last_cmd"
+			Description="waits for last command to get over"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			># Wait for last command to finish before we proceed further in script
+wait $!
+</Snippet>
+		<Snippet
+			Name="while"
+			Description="while loop"
+			Language="All with { }"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>while ($cond$) {
+    $end$
+}
+</Snippet>
+		<Snippet
+			Name="while_infinite"
+			Description="Perform a task in an infinite loop"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>while [1]
+    do
+        # Add task to perform forever
+        # Dummy task replaces this line. e.g. ls -al /var/log/messages
+
+        # Add delay between consecutive tasks
+        sleep $SLEEP_TIME
+    done
+
+</Snippet>
+		<Snippet
+			Name="write_to_file"
+			Description="writes a single line to file (overwrite)"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[################################################################
+# Usage : write_to_file <filename> <epoch_value>
+# Returns : None
+################################################################
+write_to_file()
+{
+    local FILENAME=$1
+    local VALUE=$2
+
+    # -n makes sure that you dont write a new line char at the end.
+    echo -n "$VALUE" > $FILENAME
+}
+
+# Add this line where you want to add contents to a file
+write_epoch_to_file $FILEPATH $FILE_VALUE
+
+
+]]></Snippet>
+	</SnippetList>
+</SourceInsightCodeSnippets>
