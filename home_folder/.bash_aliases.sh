@@ -20,7 +20,7 @@ alias tmp='cd $HOME/tmp'
 #################################################################
 # CD Aliases go here - MAC OS
 #################################################################
-if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
+if [[ "$HOSTNAME" == *"MacBook-Pro.local"* ]]; then
 alias home='cd $HOME'
 alias linux='cd $HOME/Documents/R_Drive/01_Programming_Stuff/03_raspberry_pi/03_Kernel_Sources'
 alias algo='cd $HOME/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm'
