@@ -31,6 +31,7 @@ alias expense='cd $HOME/Documents/R_Drive/02_My_Personal_Docs/01_Expenses_Invest
 alias ebook='cd $HOME/Documents/R_Drive/01_Programming_Stuff/13_MyBookWritting'
 alias ai='cd $HOME/Documents/R_Drive/01_Programming_Stuff/18_AI/coursera/dlaicourse/TensorFlow Deployment/Course 2 - TensorFlow Lite'
 alias interviewprep='cd $HOME/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm/interview_preparation'
+alias lazybum='cd $HOME/cp_src/lazybum'
 fi
 
 #################################################################
