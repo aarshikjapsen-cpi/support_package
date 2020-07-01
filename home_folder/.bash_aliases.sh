@@ -113,6 +113,9 @@ alias telnet_CP6_172_16_250_54__23='telnet 172.16.250.54 23'
 # CP7 - [ MAC : 0024b1000002a429 ] - Shiv Kumar, Old meter
 alias telnet_CP7_172_16_251_41__2018='telnet 172.16.251.41 2018'
 alias telnet_CP7_172_16_250_52__23='telnet 172.16.250.52 23'
+# CP8 - [ MAC : 0024b10000038ce9 ] - Braj Station, UI Cam, single port
+alias telnet_CP7_172_16_251_41__2048='telnet 172.16.251.41 2048'
+alias telnet_CP7_172_16_250_71__23='telnet 172.16.250.71 23'
 
 
 
