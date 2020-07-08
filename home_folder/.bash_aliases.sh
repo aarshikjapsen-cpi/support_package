@@ -20,7 +20,7 @@ alias tmp='cd $HOME/tmp'
 #################################################################
 # CD Aliases go here - MAC OS
 #################################################################
-if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
+if [[ "$HOSTNAME" == *"MacBook-Pro.local"* ]]; then
 alias home='cd $HOME'
 alias linux='cd $HOME/Documents/R_Drive/01_Programming_Stuff/03_raspberry_pi/03_Kernel_Sources'
 alias algo='cd $HOME/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm'
@@ -31,6 +31,7 @@ alias expense='cd $HOME/Documents/R_Drive/02_My_Personal_Docs/01_Expenses_Invest
 alias ebook='cd $HOME/Documents/R_Drive/01_Programming_Stuff/13_MyBookWritting'
 alias ai='cd $HOME/Documents/R_Drive/01_Programming_Stuff/18_AI/coursera/dlaicourse/TensorFlow Deployment/Course 2 - TensorFlow Lite'
 alias interviewprep='cd $HOME/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm/interview_preparation'
+alias lazybum='cd $HOME/cp_src/lazybum'
 fi
 
 #################################################################
@@ -112,6 +113,9 @@ alias telnet_CP6_172_16_250_54__23='telnet 172.16.250.54 23'
 # CP7 - [ MAC : 0024b1000002a429 ] - Shiv Kumar, Old meter
 alias telnet_CP7_172_16_251_41__2018='telnet 172.16.251.41 2018'
 alias telnet_CP7_172_16_250_52__23='telnet 172.16.250.52 23'
+# CP8 - [ MAC : 0024b10000038ce9 ] - Braj Station, UI Cam, single port
+alias telnet_CP8_172_16_251_41__2048='telnet 172.16.251.41 2048'
+alias telnet_CP8_172_16_250_71__23='telnet 172.16.250.71 23'
 
 
 
