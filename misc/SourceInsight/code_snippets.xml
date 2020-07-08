@@ -17,7 +17,53 @@
 
 </Snippet>
 		<Snippet
-			Name="convert_to_string_and_compare"
+			Name="check_shell"
+			Description="check shell present on system"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[[ -f "/bin/bash" ] && echo "This system has a bash shell"
+[ -f "/bin/sh" ] && echo "This system has a sh shell"
+[ -f "/bin/ksh" ] && echo "This system has a ksh shell"
+
+
+]]></Snippet>
+		<Snippet
+			Name="compare_for_zero"
+			Description="compares if a variable is zero and performes accordingly"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			># Check return value is zero
+if [ $ret_val -eq 0 ]; then
+    echo "return value is zero"
+else
+    echo "return value is not zero"
+fi
+
+</Snippet>
+		<Snippet
+			Name="compare_two_strings"
+			Description="Compares two strings in shell script"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>
+VAR1="String1"
+VAR2="String2"
+
+if [ "$VAR1" = "$VAR2" ]; then
+    echo "Strings are equal."
+else
+    echo "Strings are not equal."
+fi
+
+</Snippet>
+		<Snippet
+			Name="convert_to_integer_and_compare"
 			Description="convert string integers to integers and compare"
 			Language="Makefile"
 			Enabled="1"
@@ -115,8 +161,7 @@ EPOCH_VALUE=`get_ts_in_epoch $FILE_NAME`
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
-			><![CDATA[
-################################################################
+			><![CDATA[################################################################
 # Usage : grep_zip_file <filename>
 # Returns : whole contents of file into a variable
 ################################################################
@@ -129,8 +174,14 @@ grep_zip_file()
     return `zcat $FILE_GZ | grep -c $STRING_TO_CHECK`
 }
 
+
+
+
 # Add this line in script anywhere to scan for contents of a zip file with a string pattern
-ERR_LINE_COUNT=grep_zip_file /var/log/messages.gz" "MM_1_ERR"
+grep_zip_file /var/log/messages.gz" "MM_1_ERR"
+
+# Read the error count from last function above "$?"
+ERR_LINE_COUNT=$?
 
 ]]></Snippet>
 		<Snippet
@@ -177,6 +228,37 @@ ERR_LINE_COUNT=grep_zip_file /var/log/messages.gz" "MM_1_ERR"
 			EnableVariables="1"
 			StartOnNewLine="1"
 			><![CDATA[$command$ 2> /dev/null
+]]></Snippet>
+		<Snippet
+			Name="is_file_or_dir"
+			Description="Check if a path is a file or directory"
+			Language="Makefile"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[################################################################
+# Usage : is_file_dir <filename>
+# Returns : Integer indicating type of file
+################################################################
+is_file_dir()
+{
+    # $f is local variable
+    local f="$1"
+
+    # file attributes comparisons using test 
+    [ -f "$f" ] && { return 1; }
+    [ -d "$f" ] && { return 2; }
+    [ -L "$f" ] && { return 3; }
+    [ -x "$f" ] && { return 4; }
+}
+
+# invoke the is_file_dir() and pass $file as arg
+ret=is_file_dir "$file"
+[ $ret -eq 1 ] && { echo "$file is regular file"; exit 0; }
+[ $ret -eq 2 ] && { echo "$file is directory"; exit 0; }
+[ $ret -eq 3 ] && { echo "$file is symbolic link"; exit 0; }
+[ $ret -eq 4 ] && { echo "$file is executable file"; exit 0; }
+
 ]]></Snippet>
 		<Snippet
 			Name="param_count_check"
