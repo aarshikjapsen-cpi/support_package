@@ -85,6 +85,10 @@ alias update='sudo apt-get update '
 alias upgrade='sudo apt-get upgrade '
 alias install_initramfs='sudo update-initramfs -c -k '
 alias grub_update='sudo update-grub '
+
+# Linux Related commands
+# ======================
+alias packagelist='dpkg-query -l '
 fi
 
 #################################################################
@@ -326,6 +330,7 @@ alias v='vim '
 alias vi='vim '
 alias editbashalias='vim $HOME/support_package/home_folder/.bash_aliases.sh'
 alias editgitconfig='vim .git/config'
+alias editgitmodules='vim .gitmodules'
 alias editsshconfig='vim $HOME/.ssh/config'
 #alias objdumpuboot='/home/sudhanshu/toolchain/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-objdump -Dsl u-boot > dump'
 #alias objdumplinux='/home/sudhanshu/toolchain/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-objdump -Dsl vmlinux > objdump_linux'
