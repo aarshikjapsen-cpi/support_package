@@ -89,6 +89,12 @@ alias grub_update='sudo update-grub '
 # Linux Related commands
 # ======================
 alias packagelist='dpkg-query -l '
+
+# sudo dpkg -i package_file.deb
+alias packageinstall='sudo dpkg -i '
+
+# sudo apt-get remove package_name
+alias packageremove='sudo apt-get remove '
 fi
 
 #################################################################
