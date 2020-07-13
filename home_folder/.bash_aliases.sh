@@ -512,7 +512,7 @@ function pull_all () {
     git checkout $START;
 };
 
-function set_git_user_name_email(){
+function set_git_user_name_email() {
     USER_NAME=$1
     USER_EMAIL=$2
 
@@ -531,4 +531,64 @@ function set_git_user_name_email(){
 }
   #git config --global user.email "you@example.com"
   #git config --global user.name "Your Name"
+
+
+#################################
+# OpenCV / Python related aliases
+#################################
+
+# Install python dev libs
+function install_opencv_python_libs(){
+     # Install Necessary Libs
+    echo "Installing necessary libs for Python / OpenCV development"
+    echo "========================================================="
+    sudo apt-get install build-essential cmake unzip pkg-config
+    sudo apt-get install libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
+    sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
+    sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+    sudo apt-get install libxvidcore-dev libx264-dev
+    sudo apt-get install libgtk-3-dev
+    sudo apt-get install libopenblas-dev libatlas-base-dev liblapack-dev gfortran
+    sudo apt-get install libhdf5-serial-dev
+    sudo apt-get install python3-dev python3-tk python-imaging-tk
+}
+
+# Install Virtual Environment
+function install_virtual_env() {
+    # Install virtual env
+    echo "Installing Virtual Environment"
+    echo "=============================="
+    sudo pip install virtualenv virtualenvwrapper
+}
+
+# Function to install necessary OpenCV / Python libs
+# & Other Environment settings
+function setup_opencv_python_env() {
+    # Update distribution with latest repo info
+    echo "Updating"
+    echo "========"
+    sudo apt-get update
+
+    # Upgrade system
+    echo "Upgrade"
+    echo "======="
+    sudo apt-get upgrade
+
+    # Install Necessary Libs
+    install_opencv_python_libs
+
+    # Install Virtual Env for Phython Developement
+    install_virtual_env
+
+    # Export Environment Defines
+    export WORKON_HOME=$HOME/.virtualenvs
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    source /usr/local/bin/virtualenvwrapper.sh
+}
+
+
+# Exports / Environment Defines
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
 
