@@ -112,7 +112,8 @@ alias telnet_CP2_172_16_250_70__23='telnet 172.16.250.70 23'
 alias telnet_CP3_172_16_251_42__2400='telnet 172.16.251.42 2400'
 alias telnet_CP3_172_16_250_66__23='telnet 172.16.250.66 23'
 # CP-4 - [ MAC : 0024b100000385a3 ] - My station, New Meter
-alias telnet_CP4_172_16_251_31__2031='telnet 172.16.251.31 2031'
+#alias telnet_CP4_172_16_251_31__2031='telnet 172.16.251.31 2031'   # Older port number - 2031
+alias telnet_CP4_172_16_251_31__2043='telnet 172.16.251.31 2043'
 alias telnet_CP4_172_16_250_64__23='telnet 172.16.250.64 23'
 # CP5 - [ MAC : 0024b1000002ab86 ] - Braj Station with meter, UI cam, single port
 alias telnet_CP5_172_16_251_41__2001='telnet 172.16.251.41 2001'
