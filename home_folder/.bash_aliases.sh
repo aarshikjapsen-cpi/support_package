@@ -496,7 +496,7 @@ function create_loc_branch_and_fetch_remote_code(){
 }
 
 function delete_branch(){
-	git branch -d $1 && git push origin :$1
+	git branch -D $1 && git push origin :$1
 }
 
 function rename_branch(){
