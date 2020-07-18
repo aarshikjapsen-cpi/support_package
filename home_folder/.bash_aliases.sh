@@ -541,45 +541,48 @@ function set_git_user_name_email() {
 # Install Python development related libs
 function install_python_dev_libs() {
     # NumPy lib
-    echo "Installing numpy..."
+    echo "--- Installing numpy..."
     pip3 install numpy
-    echo "Installing opencv-contrib-python..."
+    echo "--- Installing opencv-contrib-python..."
     pip3 install opencv-contrib-python
 
     # Matplotlib, SciPy, Pillow
-    echo "Installing scipy matplotlib pillow..."
+    echo "--- Installing scipy matplotlib pillow..."
     pip3 install scipy matplotlib pillow
-    echo "Installing imutils h5py requests progressbar2..."
+    echo "--- Installing imutils h5py requests progressbar2..."
     pip3 install imutils h5py requests progressbar2
-    echo "Installing opencv-contrib-python..."
+    echo "--- Installing opencv-contrib-python..."
     pip3 install scikit-learn scikit-image
 
     # TensorFlow - without GPU support
-    echo "Installing tensorflow without GPU support..."
+    echo "--- Installing tensorflow without GPU support..."
     pip3 install tensorflow
     # TensorFlow - with GPU support
-    # echo "Installing tensorflow with GPU support..."
+    # echo "--- Installing tensorflow with GPU support..."
     # pip3 install tensorflow-gpu==1.12.0
 
     # Kera
-    echo "Installing keras..."
+    echo "--- Installing keras..."
     pip3 install keras
 }
 
 # Install python dev libs
 function install_opencv_python_libs(){
-     # Install Necessary Libs
+    # Install Necessary Libs
     echo "Installing necessary libs for Python / OpenCV development"
     echo "========================================================="
-    echo "Installing build-essential cmake unzip pkg-config..." && sudo apt-get install build-essential cmake unzip pkg-config
-    echo "Installing libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev..." && sudo apt-get install libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
-    echo "Installing libjpeg-dev libpng-dev libtiff-dev..." && sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
-    echo "Installing libavcodec-dev libavformat-dev libswscale-dev libv4l-dev..." && sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-    echo "Installing libxvidcore-dev libx264-de..." && sudo apt-get install libxvidcore-dev libx264-dev
-    echo "Installing libgtk-3-dev..." && sudo apt-get install libgtk-3-dev
-    echo "Installing libopenblas-dev libatlas-base-dev liblapack-dev gfortran..." && sudo apt-get install libopenblas-dev libatlas-base-dev liblapack-dev gfortran
-    echo "Installing libhdf5-serial-dev..." && sudo apt-get install libhdf5-serial-dev
-    echo "Installing python3-dev python3-tk python-imaging-tk..." && sudo apt-get install python3-dev python3-tk python-imaging-tk
+    echo "--- Installing build-essential cmake unzip pkg-config..." && sudo apt-get install -y build-essential cmake unzip pkg-config
+    echo "--- Installing libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev..." && sudo apt-get install -y libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
+    echo "--- Installing libjpeg-dev libpng-dev libtiff-dev..." && sudo apt-get install -y libjpeg-dev libpng-dev libtiff-dev
+    echo "--- Installing libavcodec-dev libavformat-dev libswscale-dev libv4l-dev..." && sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+    echo "--- Installing libxvidcore-dev libx264-de..." && sudo apt-get install -y libxvidcore-dev libx264-dev
+    echo "--- Installing libgtk-3-dev..." && sudo apt-get install -y libgtk-3-dev
+    echo "--- Installing libopenblas-dev libatlas-base-dev liblapack-dev gfortran..." && sudo apt-get install -y libopenblas-dev libatlas-base-dev liblapack-dev gfortran
+    echo "--- Installing libhdf5-serial-dev..." && sudo apt-get install -y libhdf5-serial-dev
+    echo "--- Installing python3-dev python3-tk python-imaging-tk..." && sudo apt-get install -y python3-dev python3-tk python-imaging-tk
+
+    # Install PIP3
+    echo "Get pip.py and install pip3" && wget https://bootstrap.pypa.io/get-pip.py && sudo python3 get-pip.py
 }
 
 # Install Virtual Environment
@@ -605,6 +608,9 @@ function setup_opencv_python_env() {
 
     # Install Necessary Libs
     install_opencv_python_libs
+
+    # Install Python Deep Learning Libs (TensorFlow, Keras, Numpy, Etc)
+    install_python_dev_libs
 
     # Install Virtual Env for Phython Developement
     install_virtual_env
