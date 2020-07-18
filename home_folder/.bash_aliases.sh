@@ -541,20 +541,28 @@ function set_git_user_name_email() {
 # Install Python development related libs
 function install_python_dev_libs() {
     # NumPy lib
-    pip3 install numpy
+    echo "Installing numpy..."
+    pip3 install nump
+    echo "Installing opencv-contrib-python..."
     pip3 install opencv-contrib-python
 
     # Matplotlib, SciPy, Pillow
+    echo "Installing scipy matplotlib pillow..."
     pip3 install scipy matplotlib pillow
+    echo "Installing imutils h5py requests progressbar2..."
     pip3 install imutils h5py requests progressbar2
+    echo "Installing opencv-contrib-python..."
     pip3 install scikit-learn scikit-image
 
     # TensorFlow - without GPU support
+    echo "Installing tensorflow without GPU support..."
     pip3 install tensorflow
     # TensorFlow - with GPU support
+    # echo "Installing tensorflow with GPU support..."
     # pip3 install tensorflow-gpu==1.12.0
 
-    # Keras
+    # Kera
+    echo "Installing keras..."
     pip3 install keras
 }
 
@@ -563,23 +571,23 @@ function install_opencv_python_libs(){
      # Install Necessary Libs
     echo "Installing necessary libs for Python / OpenCV development"
     echo "========================================================="
-    sudo apt-get install build-essential cmake unzip pkg-config
-    sudo apt-get install libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
-    sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
-    sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-    sudo apt-get install libxvidcore-dev libx264-dev
-    sudo apt-get install libgtk-3-dev
-    sudo apt-get install libopenblas-dev libatlas-base-dev liblapack-dev gfortran
-    sudo apt-get install libhdf5-serial-dev
-    sudo apt-get install python3-dev python3-tk python-imaging-tk
+    echo "Installing build-essential cmake unzip pkg-config..." && sudo apt-get install build-essential cmake unzip pkg-config
+    echo "Installing libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev..." && sudo apt-get install libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
+    echo "Installing libjpeg-dev libpng-dev libtiff-dev..." && sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
+    echo "Installing libavcodec-dev libavformat-dev libswscale-dev libv4l-dev..." && sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+    echo "Installing libxvidcore-dev libx264-de..." && sudo apt-get install libxvidcore-dev libx264-dev
+    echo "Installing libgtk-3-dev..." && sudo apt-get install libgtk-3-dev
+    echo "Installing libopenblas-dev libatlas-base-dev liblapack-dev gfortran..." && sudo apt-get install libopenblas-dev libatlas-base-dev liblapack-dev gfortran
+    echo "Installing libhdf5-serial-dev..." && sudo apt-get install libhdf5-serial-dev
+    echo "Installing python3-dev python3-tk python-imaging-tk..." && sudo apt-get install python3-dev python3-tk python-imaging-tk
 }
 
 # Install Virtual Environment
 function install_virtual_env() {
     # Install virtual env
-    echo "Installing Virtual Environment"
-    echo "=============================="
-    sudo pip install virtualenv virtualenvwrapper
+    echo "Installing Virtual Environment - virtualenv & virtualenvwrapper"
+    echo "==============================================================="
+    sudo pip3 install virtualenv virtualenvwrapper
 }
 
 # Function to install necessary OpenCV / Python libs
