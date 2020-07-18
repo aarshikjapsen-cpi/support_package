@@ -604,7 +604,7 @@ function setup_opencv_python_env() {
     # Upgrade system
     echo "Upgrade"
     echo "======="
-    sudo apt-get upgrade
+    sudo apt-get upgrade -y
 
     # Install Necessary Libs
     install_opencv_python_libs
