@@ -537,6 +537,26 @@ function set_git_user_name_email() {
 # OpenCV / Python related aliases
 #################################
 
+# Install Python development related libs
+function install_python_dev_libs() {
+    # NumPy lib
+    pip3 install numpy
+    pip3 install opencv-contrib-python
+
+    # Matplotlib, SciPy, Pillow
+    pip3 install scipy matplotlib pillow
+    pip3 install imutils h5py requests progressbar2
+    pip3 install scikit-learn scikit-image
+
+    # TensorFlow - without GPU support
+    pip3 install tensorflow
+    # TensorFlow - with GPU support
+    # pip3 install tensorflow-gpu==1.12.0
+
+    # Keras
+    pip3 install keras
+}
+
 # Install python dev libs
 function install_opencv_python_libs(){
      # Install Necessary Libs
@@ -584,6 +604,7 @@ function setup_opencv_python_env() {
     export WORKON_HOME=$HOME/.virtualenvs
     export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     source /usr/local/bin/virtualenvwrapper.sh
+    export PYTHONPATH=/usr/bin/python3
 }
 
 
@@ -591,4 +612,4 @@ function setup_opencv_python_env() {
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
-
+export PYTHONPATH=/usr/bin/python3
