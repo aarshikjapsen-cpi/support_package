@@ -607,10 +607,32 @@ function setup_opencv_python_env() {
     source /usr/local/bin/virtualenvwrapper.sh
     export PYTHONPATH=/usr/bin/python3
 }
-
-
 # Exports / Environment Defines
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
 export PYTHONPATH=/usr/bin/python3
+
+
+
+#################################################################
+# Git Clone Aliases
+#################################################################
+# Raspberry Pi
+alias clone_rpi_iot_kernel='git clone https://github.com/softwaresunleashed/rpi_iot_kernel.git'
+alias clone_rpi_iot_projects_src_code='git clone https://github.com/softwaresunleashed/iot_projects_src_code.git'
+
+# Arduino
+alias clone_arduino='git clone https://github.com/softwaresunleashed/arduino.git'
+
+# Personal Docs
+alias clone_personaldocs='git clone https://github.com/softwaresunleashed/personaldocs.git'
+
+# Ebook Writing
+alias clone_ebook_writing='git clone https://github.com/softwaresunleashed/ebook_writing.git'
+
+# AI / DeepLearning
+alias clone_ai='git clone https://github.com/softwaresunleashed/ai.git'
+alias clone_opencv='git clone https://github.com/opencv/opencv.git'
+alias clone_opencv_contrib='git clone https://github.com/opencv/opencv_contrib.git'
+
