@@ -542,7 +542,7 @@ function set_git_user_name_email() {
 function install_python_dev_libs() {
     # NumPy lib
     echo "Installing numpy..."
-    pip3 install nump
+    pip3 install numpy
     echo "Installing opencv-contrib-python..."
     pip3 install opencv-contrib-python
 
