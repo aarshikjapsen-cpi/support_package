@@ -593,6 +593,25 @@ function install_virtual_env() {
     sudo pip3 install virtualenv virtualenvwrapper
 }
 
+# Define OpenCV environment variables
+function define_opencv_env_var() {
+    export WORKON_HOME=$HOME/.virtualenvs
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+        source /usr/local/bin/virtualenvwrapper.sh
+    fi
+    export PYTHONPATH=/usr/bin/python3
+    # Adds path only if its not already present in $PATH
+    echo $PATH | grep -q "/usr/local/bin"
+    if [ $? -ne 0 ]; then
+        export PATH=/usr/local/bin:$PATH
+    fi
+    echo $PATH | grep -q "/usr/local/opt/python/libexec/bin"
+    if [ $? -ne 0 ]; then
+        export PATH=/usr/local/opt/python/libexec/bin:$PATH
+    fi
+}
+
 # Function to install necessary OpenCV / Python libs
 # & Other Environment settings
 function setup_opencv_python_env() {
@@ -616,17 +635,11 @@ function setup_opencv_python_env() {
     install_virtual_env
 
     # Export Environment Defines
-    export WORKON_HOME=$HOME/.virtualenvs
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-    source /usr/local/bin/virtualenvwrapper.sh
-    export PYTHONPATH=/usr/bin/python3
+    define_opencv_env_var
 }
-# Exports / Environment Defines
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
-export PYTHONPATH=/usr/bin/python3
 
+# Exports / Environment Defines
+define_opencv_env_var
 
 
 #################################################################
