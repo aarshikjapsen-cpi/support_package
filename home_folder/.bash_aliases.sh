@@ -438,6 +438,9 @@ alias gd='git diff '
 alias update='git remote update '
 alias update_submodules='git submodule update --init --recursive '   # git checkout the tag on parent module before invoking this command. Sub-modules will be checkedout as per the parent's tag.
 
+# execute this command if you modify .gitmodules to reflect changes in sub modules.
+# Ref :: https://stackoverflow.com/questions/913701/how-to-change-the-remote-repository-for-a-git-submodule
+alias sync_submodule_path='git submodule sync --recursive '
 
 alias add='git add '
 alias gadd='git add '
@@ -609,6 +612,11 @@ function define_opencv_env_var() {
     echo $PATH | grep -q "/usr/local/opt/python/libexec/bin"
     if [ $? -ne 0 ]; then
         export PATH=/usr/local/opt/python/libexec/bin:$PATH
+    fi
+
+    echo $PATH | grep -q "/usr/local/lib/python3.7/dist-packages"
+    if [ $? -ne 0 ]; then
+        export PATH=/usr/local/lib/python3.7/dist-packages:$PATH
     fi
 }
 
