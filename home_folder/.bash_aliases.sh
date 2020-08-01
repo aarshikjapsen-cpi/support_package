@@ -549,13 +549,15 @@ function install_python_dev_libs() {
     pip3 install numpy
     echo "--- Installing opencv-contrib-python..."
     pip3 install opencv-contrib-python
+    # Perhaps there is a bug in the latest version 4.1.1.26..Use below version if you face error.
+    # pip install opencv-contrib-python==4.1.0.25
 
     # Matplotlib, SciPy, Pillow
     echo "--- Installing scipy matplotlib pillow..."
     pip3 install scipy matplotlib pillow
     echo "--- Installing imutils h5py requests progressbar2..."
     pip3 install imutils h5py requests progressbar2
-    echo "--- Installing opencv-contrib-python..."
+    echo "--- Installing scikit-learn scikit-image..."
     pip3 install scikit-learn scikit-image
 
     # TensorFlow - without GPU support
