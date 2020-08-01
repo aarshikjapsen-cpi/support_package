@@ -350,7 +350,7 @@ alias unpack_bz2='tar -xvfj '
 alias changefilemode644='chmod 644  '
 alias ll='ls -alrt'
 alias install_essentials='sudo apt-get install screen ctags vim git cscope build-essential libncurses-dev bison flex libssl-dev libelf-dev'
-alias install_essentials_mac='brew install wget '
+alias install_essentials_mac='brew install wget cscope'
 alias addr='ifconfig '
 alias log='dmesg '
 alias logtail='dmesg | tail '
@@ -380,10 +380,12 @@ function build_cscope_db_func()
      find $PWD -name *.c \
             -o -name *.h \
             -o -name *.mk \
-            -o -name *.xml\
-            -o -name *.cfg\
-            -o -name *.ini\
-            -o -name *.dat\
+            -o -name *.xml \
+            -o -name *.cfg \
+            -o -name *.ini \
+            -o -name *.dat \
+            -o -name *.py \
+            -o -name *.hpp \
             -o -name *.cpp > $PWD/cscope.files
   cscope -RCbk
   export CSCOPE_DB=$PWD/cscope.out
@@ -399,8 +401,6 @@ alias csr='cscope -R'
 alias csbuild=build_cscope_db_func
 alias csexport=cscope_export_db_func
 
-# GIT Aliases
-# ===========
 function reload(){
     echo "Performing Update operation..."
     cp ~/support_package/home_folder/.screenrc ~
@@ -413,6 +413,9 @@ function reload(){
     echo "...Update Operation [ DONE ]."
 }
 
+
+# GIT Aliases
+# ===========
 alias gl='git log '
 alias gl_withfilechanges='git log --name-only '
 alias gl_withfileandcodechanges='git log -p '
