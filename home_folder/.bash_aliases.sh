@@ -577,12 +577,13 @@ function install_opencv_python_libs(){
     echo "========================================================="
     echo "--- Installing build-essential cmake unzip pkg-config..." && sudo apt-get install -y build-essential cmake unzip pkg-config
     echo "--- Installing libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev..." && sudo apt-get install -y libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
-    echo "--- Installing libjpeg-dev libpng-dev libtiff-dev..." && sudo apt-get install -y libjpeg-dev libpng-dev libtiff-dev
+    echo "--- Installing libjpeg-dev libpng-dev libtiff-dev libjasper-dev..." && sudo apt-get install -y libjpeg-dev libpng-dev libtiff-dev libjasper-dev
     echo "--- Installing libavcodec-dev libavformat-dev libswscale-dev libv4l-dev..." && sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
     echo "--- Installing libxvidcore-dev libx264-de..." && sudo apt-get install -y libxvidcore-dev libx264-dev
     echo "--- Installing libgtk-3-dev..." && sudo apt-get install -y libgtk-3-dev
     echo "--- Installing libopenblas-dev libatlas-base-dev liblapack-dev gfortran..." && sudo apt-get install -y libopenblas-dev libatlas-base-dev liblapack-dev gfortran
     echo "--- Installing libhdf5-serial-dev..." && sudo apt-get install -y libhdf5-serial-dev
+    echo "--- Installing libqtgui4 python3-pyqt5 libqt4-test..." && sudo apt-get install -y libqtgui4 python3-pyqt5 libqt4-test
     echo "--- Installing python3-dev python3-tk python-imaging-tk..." && sudo apt-get install -y python3-dev python3-tk python-imaging-tk
 
     # Install PIP3
@@ -604,12 +605,23 @@ function define_opencv_env_var() {
     if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
         source /usr/local/bin/virtualenvwrapper.sh
     fi
-    export PYTHONPATH=/usr/bin/python3
+
+    if [ -f "/usr/bin/python3" ]; then
+        export PYTHONPATH=/usr/bin/python3
+    fi
+
+    # Load this library for error
+    # opencv: undefined symbol: __atomic_fetch_add_8
+    if [ -f "/usr/lib/arm-linux-gnueabihf/libatomic.so.1" ]; then
+        export LD_PRELOAD=/usr/lib/arm-linux-gnueabihf/libatomic.so.1
+    fi
+
     # Adds path only if its not already present in $PATH
     echo $PATH | grep -q "/usr/local/bin"
     if [ $? -ne 0 ]; then
         export PATH=/usr/local/bin:$PATH
     fi
+
     echo $PATH | grep -q "/usr/local/opt/python/libexec/bin"
     if [ $? -ne 0 ]; then
         export PATH=/usr/local/opt/python/libexec/bin:$PATH
@@ -619,6 +631,7 @@ function define_opencv_env_var() {
     if [ $? -ne 0 ]; then
         export PATH=/usr/local/lib/python3.7/dist-packages:$PATH
     fi
+
 }
 
 # Function to install necessary OpenCV / Python libs
