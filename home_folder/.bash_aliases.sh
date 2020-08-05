@@ -349,7 +349,7 @@ alias unpack_gz='tar -xvfz '
 alias unpack_bz2='tar -xvfj '
 alias changefilemode644='chmod 644  '
 alias ll='ls -alrt'
-alias install_essentials='sudo apt-get install screen ctags vim git cscope build-essential libncurses-dev bison flex libssl-dev libelf-dev'
+alias install_essentials='sudo apt-get install screen ctags vim git cscope build-essential libncurses-dev bison flex libssl-dev libelf-dev exuberant-ctags'
 alias install_essentials_mac='brew install wget cscope'
 alias addr='ifconfig '
 alias log='dmesg '
@@ -380,6 +380,7 @@ function build_cscope_db_func()
      find $PWD -name *.c \
             -o -name *.h \
             -o -name *.mk \
+            -o -name "*.sh" \
             -o -name *.xml \
             -o -name *.cfg \
             -o -name *.ini \
