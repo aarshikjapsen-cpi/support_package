@@ -607,13 +607,15 @@ function install_virtual_env() {
 # Define OpenCV environment variables
 function define_opencv_env_var() {
     export WORKON_HOME=$HOME/.virtualenvs
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-    if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
-        source /usr/local/bin/virtualenvwrapper.sh
+    export VIRTUALENVWRAPPER_VIRTUALENV=$(which virtualenv)
+    export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+
+    if [ -f "$(which virtualenvwrapper.sh)" ]; then
+        source $(which virtualenvwrapper.sh)
     fi
 
-    if [ -f "/usr/bin/python3" ]; then
-        export PYTHONPATH=/usr/bin/python3
+    if [ -f "$(which python3)" ]; then
+        export PYTHONPATH=$(which python3)
     fi
 
     # Load this library for error
