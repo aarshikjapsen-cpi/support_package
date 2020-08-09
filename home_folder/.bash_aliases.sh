@@ -273,7 +273,12 @@ alias dir='ll'
 alias cls='clear'
 
 
-alias finder='open .'
+if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
+    alias finder='open .'
+else
+    alias finder='nautilus . &'
+fi
+
 alias back='cd -'
 
 # =======================================

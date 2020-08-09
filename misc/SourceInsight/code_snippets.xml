@@ -17,9 +17,58 @@
 
 </Snippet>
 		<Snippet
+			Name="check_for_time_elapsed"
+			Description="Checks if time elapsed since last operation is greater than TIME_ELAPSED"
+			Language="Bash"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[TIME_ELAPSED_BEFORE_MCP_RESTART=$((60 * 60))      # 3600 seconds or 1 hour
+
+################################################################
+# Usage : read_epoch_from_file <filename>
+# Returns : contents of file into a variable
+################################################################
+read_epoch_from_file()
+{
+    local EPOCH_FILENAME=$1
+    local EPOCH_VALUE=`/bin/cat $EPOCH_FILENAME`
+
+    echo $EPOCH_VALUE
+}
+
+
+################################################################
+# Usage : get_current_epoch_in_secs
+# Returns : returns current date in epoch secs
+################################################################
+get_current_epoch_in_secs()
+{
+    echo -n "`date +'%s'`"
+}
+
+
+################################################################
+# Check for minimum Elapsed time
+################################################################
+if [ -f $LAST_MCP_RESTART_FILEPATH ]; then
+    CURRENT_TIME_IN_EPOCH_SECS=`get_current_epoch_in_secs`
+    LAST_MCP_RESTART_TIME=`read_epoch_from_file $LAST_MCP_RESTART_FILEPATH`
+
+    # Find the difference between current and last mcp restart
+    DIFF=`expr $CURRENT_TIME_IN_EPOCH_SECS - $LAST_MCP_RESTART_TIME`
+    if [ $DIFF -gt $TIME_ELAPSED_BEFORE_MCP_RESTART ]; then
+        # Diff is greater than pre-defined elapse time
+
+        # Do whatever you want to do when min time has elapsed
+    fi
+fi
+
+]]></Snippet>
+		<Snippet
 			Name="check_shell"
 			Description="check shell present on system"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -32,7 +81,7 @@
 		<Snippet
 			Name="compare_for_zero"
 			Description="compares if a variable is zero and performes accordingly"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -45,27 +94,9 @@ fi
 
 </Snippet>
 		<Snippet
-			Name="compare_two_strings"
-			Description="Compares two strings in shell script"
-			Language="Makefile"
-			Enabled="1"
-			EnableVariables="1"
-			StartOnNewLine="1"
-			>
-VAR1="String1"
-VAR2="String2"
-
-if [ "$VAR1" = "$VAR2" ]; then
-    echo "Strings are equal."
-else
-    echo "Strings are not equal."
-fi
-
-</Snippet>
-		<Snippet
-			Name="convert_to_integer_and_compare"
+			Name="compare_two_integers"
 			Description="convert string integers to integers and compare"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -79,6 +110,23 @@ if [ $INT_VAR1 -gt $INT_VAR2 ]; then
     echo "INT1 is greater"
 else
     echo "INT2 is greater"
+fi
+
+</Snippet>
+		<Snippet
+			Name="compare_two_strings"
+			Description="Compares two strings in shell script"
+			Language="Bash"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>VAR1="String1"
+VAR2="String2"
+
+if [ "$VAR1" = "$VAR2" ]; then
+    echo "Strings are equal."
+else
+    echo "Strings are not equal."
 fi
 
 </Snippet>
@@ -97,7 +145,7 @@ fi
 		<Snippet
 			Name="file_exist_check"
 			Description="Checks if a given file exists"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -134,9 +182,30 @@ for (index = $start$; index < $limit$; index++) {
 }
 ]]></Snippet>
 		<Snippet
+			Name="get_current_epoch_in_secs"
+			Description="Returns the current epoch of system in seconds"
+			Language="Bash"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>################################################################
+# Usage : get_current_epoch_in_secs
+# Returns : returns current date in epoch secs
+################################################################
+get_current_epoch_in_secs()
+{
+    echo -n "`date +'%s'`"
+}
+
+# Invocation of get_current_epoch_in_secs()
+# write_epoch_to_file $LAST_MCP_RESTART_FILEPATH `get_current_epoch_in_secs`
+
+
+</Snippet>
+		<Snippet
 			Name="get_ts_in_epoch"
 			Description="Timestamp of file passed in EPOCs."
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -223,7 +292,7 @@ ERR_LINE_COUNT=$?
 		<Snippet
 			Name="ignore_command_output"
 			Description="ignores commands output by redirecting to null device"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -232,7 +301,7 @@ ERR_LINE_COUNT=$?
 		<Snippet
 			Name="is_file_or_dir"
 			Description="Check if a path is a file or directory"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -263,7 +332,7 @@ ret=is_file_dir "$file"
 		<Snippet
 			Name="param_count_check"
 			Description="check parameter count passed to script"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -279,7 +348,7 @@ fi
 		<Snippet
 			Name="print_usage"
 			Description="Print Usage if parameters are less than a count"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -303,7 +372,7 @@ fi
 		<Snippet
 			Name="read_from_file"
 			Description="reads file and returns contents of file"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -328,8 +397,8 @@ FILE_CONTENTS=`read_from_file $FILEPATH`
 ]]></Snippet>
 		<Snippet
 			Name="redirect_command_err_to_log_file"
-			Description="redirects the error encountered during command executio to log file"
-			Language="Makefile"
+			Description="redirects the error encountered during command execution to log file"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -358,9 +427,18 @@ local VALUE=`/bin/cat $SOME_FILENAME 2>>$LOG_FILE &1>>$LOG_FILE`
 }
 </Snippet>
 		<Snippet
+			Name="unzip_and_grep"
+			Description="Unzip a GZ file, and grep for a particular pattern"
+			Language="Bash"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>return `zcat $LOG_FILE_GZ | grep -c $STRING_TO_CHECK`
+</Snippet>
+		<Snippet
 			Name="wait_for_last_cmd"
 			Description="waits for last command to get over"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -381,7 +459,7 @@ wait $!
 		<Snippet
 			Name="while_infinite"
 			Description="Perform a task in an infinite loop"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"
@@ -398,7 +476,7 @@ wait $!
 		<Snippet
 			Name="write_to_file"
 			Description="writes a single line to file (overwrite)"
-			Language="Makefile"
+			Language="Bash"
 			Enabled="1"
 			EnableVariables="1"
 			StartOnNewLine="1"

@@ -1,0 +1,146 @@
+<?xml version="1.0" ?>
+<SourceInsightConfiguration
+	AppVer="4.00.0032"
+	AppVerMinReader="4.00.0008"
+	>
+	<!-- This is a Source Insight configuration file. -->
+	<!-- www.sourceinsight.com -->
+
+	<Languages>
+		<Language
+			Name="68000"
+			Comment=""
+			CaseSensitive="0"
+			CPreprocessor="0"
+			SmartIndent="0"
+			ContainsSourceCode="1"
+			SyntaxFormatting="1"
+			UseRegexParsing="0"
+			SyntaxDecorations="0"
+			CommentStyles="0"
+			AllowSmartTab="0"
+			DetectNumbers="1"
+			CHexNum="0"
+			IntelHexNum="0"
+			MotorolaHexNum="0"
+			BasicHexNum="0"
+			IntelOctalNum="0"
+			QOctalNum="0"
+			NonAlphaNumIdentChars="_"
+			>
+			<CustomParsing/>
+			<Ranges>
+				<Range
+					Type="Line"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Single Line"
+					StyleDelimiter="1"
+					StartString=";"
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+			</Ranges>
+			<Keywords>
+				<Item Keyword="A0" Style="Register" />
+				<Item Keyword="A1" Style="Register" />
+				<Item Keyword="A2" Style="Register" />
+				<Item Keyword="A3" Style="Register" />
+				<Item Keyword="A4" Style="Register" />
+				<Item Keyword="A5" Style="Register" />
+				<Item Keyword="A6" Style="Register" />
+				<Item Keyword="A7" Style="Register" />
+				<Item Keyword="ABCD" Style="Keyword" />
+				<Item Keyword="ADD" Style="Keyword" />
+				<Item Keyword="ADDA" Style="Keyword" />
+				<Item Keyword="ADDI" Style="Keyword" />
+				<Item Keyword="ADDQ" Style="Keyword" />
+				<Item Keyword="ADDX" Style="Keyword" />
+				<Item Keyword="AND" Style="Keyword" />
+				<Item Keyword="ANDI" Style="Keyword" />
+				<Item Keyword="ASL" Style="Keyword" />
+				<Item Keyword="ASR" Style="Keyword" />
+				<Item Keyword="Bcc" Style="Keyword" />
+				<Item Keyword="BCHG" Style="Keyword" />
+				<Item Keyword="BCLR" Style="Keyword" />
+				<Item Keyword="BSET" Style="Keyword" />
+				<Item Keyword="BSR" Style="Keyword" />
+				<Item Keyword="BTST" Style="Keyword" />
+				<Item Keyword="CHK" Style="Keyword" />
+				<Item Keyword="CLR" Style="Keyword" />
+				<Item Keyword="CMP" Style="Keyword" />
+				<Item Keyword="CMPA" Style="Keyword" />
+				<Item Keyword="CMPI" Style="Keyword" />
+				<Item Keyword="CMPM" Style="Keyword" />
+				<Item Keyword="D0" Style="Register" />
+				<Item Keyword="D1" Style="Register" />
+				<Item Keyword="D2" Style="Register" />
+				<Item Keyword="D3" Style="Register" />
+				<Item Keyword="D4" Style="Register" />
+				<Item Keyword="D5" Style="Register" />
+				<Item Keyword="D6" Style="Register" />
+				<Item Keyword="D7" Style="Register" />
+				<Item Keyword="DBcc" Style="Keyword" />
+				<Item Keyword="DBLT" Style="Keyword" />
+				<Item Keyword="DIVS" Style="Keyword" />
+				<Item Keyword="DIVU" Style="Keyword" />
+				<Item Keyword="EOR" Style="Keyword" />
+				<Item Keyword="EORI" Style="Keyword" />
+				<Item Keyword="EXG" Style="Keyword" />
+				<Item Keyword="EXT" Style="Keyword" />
+				<Item Keyword="FMOVE" Style="Keyword" />
+				<Item Keyword="FMUL" Style="Keyword" />
+				<Item Keyword="ILLEGAL" Style="Keyword" />
+				<Item Keyword="JMP" Style="Keyword" />
+				<Item Keyword="JSR" Style="Keyword" />
+				<Item Keyword="LEA" Style="Keyword" />
+				<Item Keyword="LINK" Style="Keyword" />
+				<Item Keyword="LSL" Style="Keyword" />
+				<Item Keyword="LSR" Style="Keyword" />
+				<Item Keyword="MOVE" Style="Keyword" />
+				<Item Keyword="MOVEA" Style="Keyword" />
+				<Item Keyword="MOVEM" Style="Keyword" />
+				<Item Keyword="MOVEP" Style="Keyword" />
+				<Item Keyword="MOVEQ" Style="Keyword" />
+				<Item Keyword="MULS" Style="Keyword" />
+				<Item Keyword="MULU" Style="Keyword" />
+				<Item Keyword="NBCD" Style="Keyword" />
+				<Item Keyword="NEG" Style="Keyword" />
+				<Item Keyword="NEGX" Style="Keyword" />
+				<Item Keyword="NOP" Style="Keyword" />
+				<Item Keyword="NOT" Style="Keyword" />
+				<Item Keyword="OR" Style="Keyword" />
+				<Item Keyword="ORI" Style="Keyword" />
+				<Item Keyword="PC" Style="Register" />
+				<Item Keyword="PEA" Style="Keyword" />
+				<Item Keyword="RESET" Style="Keyword" />
+				<Item Keyword="ROL" Style="Keyword" />
+				<Item Keyword="ROR" Style="Keyword" />
+				<Item Keyword="ROXL" Style="Keyword" />
+				<Item Keyword="ROXR" Style="Keyword" />
+				<Item Keyword="RTE" Style="Keyword" />
+				<Item Keyword="RTR" Style="Keyword" />
+				<Item Keyword="RTS" Style="Keyword" />
+				<Item Keyword="SBCD" Style="Keyword" />
+				<Item Keyword="Scc" Style="Keyword" />
+				<Item Keyword="SSP" Style="Register" />
+				<Item Keyword="STOP" Style="Keyword" />
+				<Item Keyword="SUB" Style="Keyword" />
+				<Item Keyword="SUBA" Style="Keyword" />
+				<Item Keyword="SUBI" Style="Keyword" />
+				<Item Keyword="SUBQ" Style="Keyword" />
+				<Item Keyword="SUBX" Style="Keyword" />
+				<Item Keyword="SWAP" Style="Keyword" />
+				<Item Keyword="TAS" Style="Keyword" />
+				<Item Keyword="TRAP" Style="Keyword" />
+				<Item Keyword="TRAPV" Style="Keyword" />
+				<Item Keyword="TST" Style="Keyword" />
+				<Item Keyword="UNLK" Style="Keyword" />
+				<Item Keyword="USP" Style="Register" />
+			</Keywords>
+		</Language>
+	</Languages>
+</SourceInsightConfiguration>
