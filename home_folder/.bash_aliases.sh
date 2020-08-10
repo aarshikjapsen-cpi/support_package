@@ -48,6 +48,7 @@ alias interviewprep='cd $HOME/tmp/01_linux_learning'
 
 #ChargePoint Specific
 alias cp4k='cd $HOME/cp_src/cp4k'
+alias generic='cd $HOME/cp_src/cp4k/emb-cphm400-build-generic'
 alias chaps='cd $HOME/cp_src/emb-chaps'
 alias core='cd $HOME/cp_src/emb-core'
 alias mcu='cd $HOME/cp_src/emb-mcu'
