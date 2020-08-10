@@ -346,6 +346,69 @@ fi
 
 </Snippet>
 		<Snippet
+			Name="press_any_key_to_continue"
+			Description="Press any key to continue implementation with timeout"
+			Language="Bash"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			><![CDATA[# Logging variables
+LAST_FLUSH_TIME=0
+FLUSH_PERIOD=300
+MEM_LOG_FILE=/var/log/pppmemlog
+PERM_LOG_FILE=/opt/ppplog
+PERM_LOG_LINES=1000
+
+
+#-------------------------------------------------
+# Flush RAM log file to persistent storage
+#-------------------------------------------------
+doflushlog() {
+    local tsecs=`date +"%s"`
+    local et=`expr $tsecs '-' $LAST_FLUSH_TIME`
+    if [ $et -ge $FLUSH_PERIOD ]; then
+        if [ -e "$MEM_LOG_FILE" ]; then
+            tail -n $PERM_LOG_LINES $MEM_LOG_FILE >$PERM_LOG_FILE
+            sync
+        fi
+        LAST_FLUSH_TIME=$tsecs
+    fi
+}
+
+#-------------------------------------------------
+# Write data to log file in memory. Possibly
+# flush this to persistent storage if enough time
+# has elapsed since the last flush.
+# doppplog <data to log>
+#-------------------------------------------------
+doppplog() {
+    echo `date +"%Y%m%d%H%M%S: "` "$@" >>$MEM_LOG_FILE
+    doflushlog
+}
+
+
+skip_action_with_timeout() {
+    local SKIP_ACTION_TIMEOUT_SECS=5
+    return read -t $SKIP_ACTION_TIMEOUT_SECS -n 1 -s -r -p "Press any key to skip action... "
+}
+
+
+
+# Skip if user presses any key.
+ret=skip_action_with_timeout
+if [ ret -eq 0 ]; then
+    doppplog "action interrupted by user."
+    exit 0
+else
+    # User dint press any key to interrupt
+    doppplog "PPP Initialization begins..."
+
+fi
+
+
+
+]]></Snippet>
+		<Snippet
 			Name="print_usage"
 			Description="Print Usage if parameters are less than a count"
 			Language="Bash"
