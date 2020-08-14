@@ -470,6 +470,35 @@ local VALUE=`/bin/cat $SOME_FILENAME 2>>$LOG_FILE &1>>$LOG_FILE`
 
 ]]></Snippet>
 		<Snippet
+			Name="substring"
+			Description="Sub String search in a variable"
+			Language="Bash"
+			Enabled="1"
+			EnableVariables="1"
+			StartOnNewLine="1"
+			>
+# Checks for a substring, and returns success or failed
+string_compare()
+{
+    local STR_FOUND_SUCCESS=0
+    local STR_NOT_FOUND_FAILED=1
+
+    local SRC_STR=$1
+    local SUB_STR_MATCH=$2
+    
+    if [[ "$SRC_STR" = *"$SUB_STR_MATCH"* ]]; then
+        return $STR_FOUND_SUCCESS
+    else
+        return $STR_NOT_FOUND_FAILED
+    fi
+}
+
+
+# Usage 
+string_compare $HOSTNAME "MacBook"
+ret=$?
+</Snippet>
+		<Snippet
 			Name="switch_case"
 			Description="switch case block"
 			Language="C/C++, C#"
