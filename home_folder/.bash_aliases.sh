@@ -273,8 +273,9 @@ alias ll='ls -alhG'
 alias dir='ll'
 alias cls='clear'
 
-
-if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
+# HOSTNAME specific commands.
+# Checks for a substring(MacBook) in HOSTNAME
+if [[ "$HOSTNAME" = *"MacBook"* ]]; then
     alias finder='open .'
 else
     alias finder='nautilus . &'
