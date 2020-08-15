@@ -20,7 +20,7 @@ alias tmp='cd $HOME/tmp'
 #################################################################
 # CD Aliases go here - MAC OS
 #################################################################
-if [[ "$HOSTNAME" == *"MacBook-Pro.local"* ]]; then
+if [[ "$HOSTNAME" == *"MacBook"* ]]; then
 alias home='cd $HOME'
 alias linux='cd $HOME/Documents/R_Drive/01_Programming_Stuff/03_raspberry_pi/03_Kernel_Sources'
 alias algo='cd $HOME/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm'
@@ -29,7 +29,7 @@ alias r='cd $HOME/Documents/R_Drive'
 alias q='cd $HOME/Documents/Q_Drive'
 alias expense='cd $HOME/Documents/R_Drive/02_My_Personal_Docs/01_Expenses_Investments'
 alias ebook='cd $HOME/Documents/R_Drive/01_Programming_Stuff/13_MyBookWritting'
-alias ai='cd $HOME/Documents/R_Drive/01_Programming_Stuff/18_AI/coursera/dlaicourse/TensorFlow Deployment/Course 2 - TensorFlow Lite'
+alias ai='cd $HOME/Documents/R_Drive/01_Programming_Stuff/18_AI'
 alias interviewprep='cd $HOME/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm/interview_preparation'
 alias lazybum='cd $HOME/cp_src/lazybum'
 fi
