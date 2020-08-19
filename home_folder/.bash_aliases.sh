@@ -581,6 +581,10 @@ function install_python_dev_libs() {
     # Kera
     echo "--- Installing keras..."
     pip3 install keras
+
+    # Mahotas
+    echo "--- Installing mahotas..."
+    pip3 install mahotas
 }
 
 # Install python dev libs
