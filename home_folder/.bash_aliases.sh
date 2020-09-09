@@ -20,7 +20,7 @@ alias tmp='cd $HOME/tmp'
 #################################################################
 # CD Aliases go here - MAC OS
 #################################################################
-if [[ "$HOSTNAME" == *"MacBook-Pro.local"* ]]; then
+if [[ "$HOSTNAME" == *"MacBook"* ]]; then
 alias home='cd $HOME'
 alias linux='cd $HOME/Documents/R_Drive/01_Programming_Stuff/03_raspberry_pi/03_Kernel_Sources'
 alias algo='cd $HOME/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm'
@@ -29,8 +29,22 @@ alias r='cd $HOME/Documents/R_Drive'
 alias q='cd $HOME/Documents/Q_Drive'
 alias expense='cd $HOME/Documents/R_Drive/02_My_Personal_Docs/01_Expenses_Investments'
 alias ebook='cd $HOME/Documents/R_Drive/01_Programming_Stuff/13_MyBookWritting'
-alias ai='cd $HOME/Documents/R_Drive/01_Programming_Stuff/18_AI/coursera/dlaicourse/TensorFlow Deployment/Course 2 - TensorFlow Lite'
+alias ai='cd $HOME/Documents/R_Drive/01_Programming_Stuff/18_AI'
 alias interviewprep='cd $HOME/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm/interview_preparation'
+
+#ChargePoint Specific
+alias cp4k='cd $HOME/cp_src/cp4k'
+alias generic='cd $HOME/cp_src/cp4k/emb-cphm400-build-generic'
+alias chaps='cd $HOME/cp_src/emb-chaps'
+alias core='cd $HOME/cp_src/emb-core'
+alias mcu='cd $HOME/cp_src/emb-mcu'
+alias platform='cd $HOME/cp_src/emb-platform'
+alias chui='cd $HOME/cp_src/emb-chui'
+alias sitara='cd $HOME/cp_src/emb-sitara-chaps'
+alias ct4k='cd $HOME/cp_src/emb-ct4k-chaps'
+alias cpnk='cd $HOME/cp_src/emb-cpnk'
+alias panda='cd $HOME/cp_src/emb-panda-dev'
+alias jansson='cd $HOME/cp_src/jansson'
 alias lazybum='cd $HOME/cp_src/lazybum'
 fi
 
@@ -265,6 +279,7 @@ export PS1='\n\r┌─ User:\[\033[1;92m\]\u\[\033[0m\]   Host:\[\033[1;92m\]\H\
 #################################################################
 alias ls='ls -alhG'
 alias ll='ls -alhG'
+alias l='ls -alhG'
 
 # --show-control-chars: help showing Korean or accented characters
 #alias ls='ls -alhG --color=auto --show-control-chars'
@@ -362,6 +377,10 @@ alias addr='ifconfig '
 alias log='dmesg '
 alias logtail='dmesg | tail '
 alias dump_to_file_cmd_output='$1 |& tee -a command_output.txt'
+
+function compile_cpp(){
+    clang++ "$1.cpp" -std=c++2a -o "$1"
+}
 
 # Find command shortcut
 function f(){
@@ -581,6 +600,10 @@ function install_python_dev_libs() {
     # Kera
     echo "--- Installing keras..."
     pip3 install keras
+
+    # Mahotas
+    echo "--- Installing mahotas..."
+    pip3 install mahotas
 }
 
 # Install python dev libs
