@@ -259,6 +259,8 @@ endtry
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+" Map F2 to replace any tabs and convert them to spaces
+map <F2> :retab <CR> :wq! <CR>
 
 """"""""""""""""""""""""""""""
 " => Status line
