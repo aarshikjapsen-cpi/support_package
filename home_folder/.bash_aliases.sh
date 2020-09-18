@@ -75,6 +75,7 @@ alias cpnk='cd $HOME/cp_src/emb-cpnk'
 alias panda='cd $HOME/cp_src/emb-panda-dev'
 alias jansson='cd $HOME/cp_src/jansson'
 alias lazybum='cd $HOME/cp_src/lazybum'
+alias buildroot='cd $HOME/cp_src/buildroot'
 fi
 
 #################################################################
