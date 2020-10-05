@@ -156,6 +156,7 @@ alias telnet_CP10_172_16_250_71__23='telnet 172.16.250.71 23'
 # SSH Aliases - check .ssh/config for IP address of Hosts
 #################################################################
 alias connect_rpi='ssh pi@rpi'
+alias connect_rpi4='ssh pi@rpi4'
 alias connect_vm='ssh sudhanshu@vm'
 alias connect_mac='ssh sudhanshu@mac'
 
