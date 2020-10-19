@@ -164,6 +164,9 @@ alias connect_rpi4='ssh pi@rpi4'
 alias connect_vm='ssh sudhanshu@vm'
 alias connect_mac='ssh sudhanshu@mac'
 
+alias connect_serial='screen /dev/tty.usbserial-0001 115200'
+
+
 # ChargePoint TFTP Server
 # =======================
 alias connect_tftp_cp='ssh sgupta@tftp_cp'
