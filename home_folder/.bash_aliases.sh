@@ -411,6 +411,22 @@ function f(){
     fi
 }
 
+# Grep command shortcut
+function g(){
+    EXPRESSION_TO_SEARCH=$1
+
+
+    if [ "$#" -ne 1 ];
+        then
+           echo "Illegal number of parameters"
+           echo "Usage :"
+           echo "$ g string_to_search_current_directory_recursively"
+           echo ""
+        else
+            grep -rin "$EXPRESSION_TO_SEARCH" .
+    fi
+}
+
 
 # Cscope Commands
 # =============
