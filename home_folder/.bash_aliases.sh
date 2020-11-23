@@ -386,8 +386,9 @@ alias unpack_gz='tar -xvfz '
 alias unpack_bz2='tar -xvfj '
 alias changefilemode644='chmod 644  '
 alias ll='ls -alrt'
-alias install_essentials='sudo apt-get install screen ctags vim git cscope build-essential libncurses-dev bison flex libssl-dev libelf-dev exuberant-ctags rar unrar'
+alias install_essentials='sudo apt-get install -y screen ctags vim git cscope build-essential libncurses-dev bison flex libssl-dev libelf-dev exuberant-ctags rar unrar'
 alias install_essentials_mac='brew install wget cscope ctags dos2unix'
+alias install_essentials_hack='sudo apt-get install -y aircrack-ng'
 alias addr='ifconfig '
 alias log='dmesg '
 alias logtail='dmesg | tail '
@@ -429,6 +430,21 @@ function g(){
     fi
 }
 
+# Find and Delete a file or directory
+function find_and_delete(){
+    EXPRESSION_TO_DELETE=$1
+
+
+    if [ "$#" -ne 1 ];
+        then
+           echo "Illegal number of parameters"
+           echo "Usage :"
+           echo "$ find_and_delete file_name_or_directory_to_delete"
+           echo ""
+        else
+            find . -name "EXPRESSION_TO_DELETE" -exec rm -vrf {} \;
+    fi
+}
 
 # Cscope Commands
 # =============
