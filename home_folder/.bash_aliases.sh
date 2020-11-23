@@ -167,9 +167,13 @@ alias connect_mac='ssh sudhanshu@mac'
 alias connect_serial='screen /dev/tty.usbserial-0001 115200'
 
 
-# ChargePoint TFTP Server
+# ChargePoint
 # =======================
 alias connect_tftp_cp='ssh sgupta@tftp_cp'
+alias connect_cpe250_1='ssh sudhanshu@172.16.251.139'       # Sudhanshu chargepoint
+alias connect_cpe250_2='ssh tftp1@172.16.251.62'            # Shubham chargepoint123
+
+
 
 if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
 alias ssh_key_gen='ssh-keygen -t rsa -b 4096 -C "softwares.unleashed@gmail.com"'
