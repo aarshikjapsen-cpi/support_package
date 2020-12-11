@@ -168,11 +168,14 @@ alias connect_serial='screen /dev/tty.usbserial-0001 115200'
 
 
 # ChargePoint
-# =======================
+# ===========
 alias connect_tftp_cp='ssh sgupta@tftp_cp'
-alias connect_cpe250_1='ssh sudhanshu@172.16.251.139'       # Sudhanshu chargepoint
+alias connect_cpe250_1='ssh sudhanshu@172.16.251.239'       # Sudhanshu chargepoint
 alias connect_cpe250_2='ssh tftp1@172.16.251.62'            # Shubham chargepoint123
 
+alias telnet_power_switch='telnet 172.16.251.31 2047'
+alias telnet_dcc_serial='telnet 172.16.251.41 2047'
+alias telnet_cpnk_serial='telnet 172.16.251.41 2048'
 
 
 if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
@@ -513,7 +516,8 @@ alias pull='git pull '
 alias pull_recursive='git pull --recurse-submodules '
 alias push='git push '
 alias push_branchname='git push origin HEAD:origin/$1'
-alias forcepush_branchname='git push -f origin $1:$1'
+alias forcepush_branchname='git push origin +$1:$1'
+#alias forcepush_branchname='git push -f origin $1:$1'
 #alias forcepush_branchname='git push -f $1:$1'
 alias merge='git merge '
 alias gd='git diff '
