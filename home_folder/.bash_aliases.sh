@@ -520,6 +520,7 @@ alias forcepush_branchname='git push origin +$1:$1'
 #alias forcepush_branchname='git push -f origin $1:$1'
 #alias forcepush_branchname='git push -f $1:$1'
 alias merge='git merge '
+alias revert='git revert '
 alias gd='git diff '
 alias update='git remote update '
 alias update_submodules='git submodule update --init --recursive '   # git checkout the tag on parent module before invoking this command. Sub-modules will be checkedout as per the parent's tag.
