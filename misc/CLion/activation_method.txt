@@ -1,7 +1,24 @@
-Ref :
+Method 1 : Resetting evaluation key by 30 days
+==============================================
+
+Reset Your IDE Eval Information
+1. Download and install plugin from [https://plugins.zhile.io/files/ide-eval-resetter-2.1.9.zip].
+    * Alternative installation method:
+        * Add "Custom Plugin Repository": https://plugins.zhile.io manually (Settings/Preferences -> Plugins)
+        * Search and install plugin: IDE Eval Reset
+2. Click “Help” or “Get Help” -> “Eval Reset” menu.
+3. Click “Reset” -> “Yes” button.
+    * (Even select “Reset on Restart” checkbox, so that your eval time is extended by 30 days every time you restart the IDE)
+4. Restart your IDE.
+5. Now you have another 30 days eval time :)
+6. For more information, visit [ https://zhile.io/2020/11/18/jetbrains-eval-reset.html ]…may need translation
 
 
 
+
+=========================================================================================================================================================================================
+Method 2 : Activation code
+==========================
 
 Here is easy way how to fix and you do not need add something to "hosts" file ...
 1. Install CLion and enable evaluation mode.
