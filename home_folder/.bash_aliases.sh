@@ -661,6 +661,28 @@ function install_python_dev_libs() {
     # Mahotas
     echo "--- Installing mahotas..."
     pip3 install mahotas
+
+    # NSE tools - to get stock details realtime
+    echo "--- Installing nsetools..."
+    pip3 install nsetools
+
+
+    # Yahoo Finance - to get stock details
+    echo "--- Installing yfinance..."
+    pip3 install yfinance
+
+    # Pandas
+    echo "--- Installing pandas..."
+    pip3 install pandas
+
+    # html5lib
+    echo "--- Installing html5lib..."
+    pip3 install html5lib
+
+    # BeautifulSoup4
+    echo "--- Installing BeautifulSoup4..."
+    pip3 install BeautifulSoup4
+
 }
 
 # Install python dev libs
