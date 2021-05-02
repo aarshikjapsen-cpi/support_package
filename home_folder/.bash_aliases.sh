@@ -683,6 +683,10 @@ function install_python_dev_libs() {
     echo "--- Installing BeautifulSoup4..."
     pip3 install BeautifulSoup4
 
+
+    # earthpy - for os path related stuff, writing generic OS independent code
+    echo "--- Installing earthpy..."
+    pip3 install earthpy
 }
 
 # Install python dev libs
