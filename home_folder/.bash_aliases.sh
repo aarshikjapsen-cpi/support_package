@@ -155,7 +155,8 @@ alias telnet_CP10_172_16_251_41__2039='telnet 172.16.251.41 2039'
 alias telnet_CP10_172_16_250_72__23='telnet 172.16.250.72 23'
 
 
-alias telnet_Panther_US_172_18_1_12__2035='telnet 172.18.1.12 2035'
+alias telnet_Panther1_US_172_18_1_12__2035='telnet 172.18.1.12 2035'
+alias telnet_Panther2_QA_172_16_251_41__2036='telnet 172.16.251.41 2036'
 
 #################################################################
 # SSH Aliases - check .ssh/config for IP address of Hosts
