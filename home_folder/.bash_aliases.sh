@@ -159,6 +159,7 @@ alias telnet_CP10_172_16_250_72__23='telnet 172.16.250.72 23'
 alias panther1_US_172_18_1_12__2035='telnet 172.18.1.12 2035'
 alias panther2_QA_172_16_251_41__2036='telnet 172.16.251.41 2036'
 alias panther3_QA_172_16_251_41__2005='telnet 172.16.251.41 2005'
+alias panther4_US_172_18_1_12__2047='telnet 172.18.1.12 2047'
 
 # Falcon
 alias falcon1_IN_172_16_250_34='ssh root@172.16.250.134'
