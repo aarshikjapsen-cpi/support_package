@@ -157,7 +157,7 @@ alias telnet_CP10_172_16_250_72__23='telnet 172.16.250.72 23'
 
 # Panther
 alias panther1_US_172_18_1_12__2035='telnet 172.18.1.12 2035'
-alias panther2_IN_172_16_251_41__2036='telnet 172.16.251.31 2036'
+alias panther2_IN_172_16_251_41__2036='telnet 172.16.251.41 2036'
 alias panther3_IN_172_16_251_41__2005='telnet 172.16.251.41 2005'
 alias panther4_US_172_18_1_12__2047='telnet 172.18.1.12 2047'
 alias panther5_IN_172_16_251_41__2003='telnet 172.16.251.41 2003'       # Same station panther5 (UCB / ACB)
@@ -187,7 +187,8 @@ alias connect_serial='screen /dev/tty.usbserial-0001 115200'
 # ===========
 alias connect_tftp_cp='ssh sgupta@tftp_cp'
 alias connect_cpe250_1='ssh sudhanshu@lab_laptop'          # Sudhanshu chargepoint
-alias connect_cpe250_2='ssh tftp1@172.16.251.62'           # Shubham chargepoint123
+alias connect_cpe250_2='ssh tftp1@172.16.251.62'           # Shubham india@123
+alias connect_automationindia='ssh tftp@172.16.251.62'           # india@123
 
 alias telnet_power_switch='telnet 172.16.251.31 2047'
 alias telnet_dcc_serial='telnet 172.16.251.41 2047'
