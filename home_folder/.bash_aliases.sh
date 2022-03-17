@@ -172,7 +172,11 @@ alias panther9_IN_172_16_251_41__2022='telnet 172.16.251.41 2022'       # Singl 
 alias falcon1_IN_172_16_250_34='ssh root@172.16.250.134'
 
 # Macaw
-alias macaw1_IN_172_16_251_31__2014='telnet 172.16.251.31 2014'
+alias macaw1_IN_172_16_251_31__2014='telnet 172.16.251.31 2014'         # Kavita Negi
+alias macaw2_IN_172_16_251_41__2046='telnet 172.16.251.41 2046'         # Chayan
+alias macaw3_IN_172_16_251_31__2023='telnet 172.16.251.31 2023'         # Gurliv
+alias macaw4_IN_172_16_251_31__2030='telnet 172.16.251.31 2030'         # Mohit
+
 
 
 #################################################################
