@@ -178,8 +178,11 @@ alias macaw2_IN_172_16_251_41__2046='telnet 172.16.251.41 2046'         # Chayan
 alias macaw3_IN_172_16_251_31__2023='telnet 172.16.251.31 2023'         # Gurliv
 alias macaw4_IN_172_16_251_31__2030='telnet 172.16.251.31 2030'         # Mohit
 alias macaw5_IN_172_16_251_31__2017='telnet 172.16.251.31 2017'         # Sudhanshu - Factory reset
+alias macaw6_IN_172_16_251_68__2001='telnet 172.16.251.68 2001'
+alias macaw7_IN_172_16_251_41__2019='telnet 172.16.251.41 2019'
 
-172.16.251.31 2017
+
+
 
 #################################################################
 # SSH Aliases - check .ssh/config for IP address of Hosts
