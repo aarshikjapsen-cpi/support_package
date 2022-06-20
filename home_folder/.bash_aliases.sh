@@ -179,7 +179,7 @@ alias macaw3_IN_172_16_251_31__2023='telnet 172.16.251.31 2023'         # Gurliv
 alias macaw4_IN_172_16_251_31__2030='telnet 172.16.251.31 2030'         # Mohit
 alias macaw5_IN_172_16_251_31__2017='telnet 172.16.251.31 2017'         # Sudhanshu - Factory reset
 alias macaw6_IN_172_16_251_68__2001='telnet 172.16.251.68 2001'
-alias macaw7_IN_172_16_251_41__2019='telnet 172.16.251.41 2019'
+alias macaw7_IN_172_16_251_31__2027='telnet 172.16.251.31 2027'
 
 
 
@@ -711,10 +711,14 @@ function install_python_dev_libs() {
     echo "--- Installing BeautifulSoup4..."
     pip3 install BeautifulSoup4
 
-
     # earthpy - for os path related stuff, writing generic OS independent code
     echo "--- Installing earthpy..."
     pip3 install earthpy
+
+    # pyside 2, 6
+    echo "--- Installing PySide..."
+    pip3 install PySide6 PySide2
+
 }
 
 # Install python dev libs
