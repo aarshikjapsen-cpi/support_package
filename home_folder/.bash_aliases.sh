@@ -207,6 +207,9 @@ alias telnet_dcc_serial='telnet 172.16.251.41 2047'
 alias telnet_cpnk_serial='telnet 172.16.251.41 2048'
 
 
+alias connect_build2server='ssh sgupta@build2server'          # Builtin server for building source
+
+
 if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
 alias ssh_key_gen='ssh-keygen -t rsa -b 4096 -C "softwares.unleashed@gmail.com"'
 fi
