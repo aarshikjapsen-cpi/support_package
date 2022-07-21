@@ -592,6 +592,23 @@ function squash_to_commitID(){
     fi
 }
 
+# Apply cherry pick patches
+function cherrypick_with_commitID(){
+    _COMMIT_ID=$1
+
+    if [ "$#" -ne 1 ];
+        then
+            echo "Illegal number of parameters"
+            echo "Usage :"
+            echo "$0 _commit_id"
+            echo "_commit_id - commit id that needs to be cherry picked to current branch"
+            echo ""
+        else
+            git cherry-pick -x "$1"
+    fi
+}
+
+
 alias gabort='git am --abort'
 
 alias createpatch_all='git format-patch  origin/master --author priyanka --stdout >> patch_file.patch '
