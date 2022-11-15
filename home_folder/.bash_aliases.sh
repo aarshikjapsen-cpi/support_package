@@ -33,7 +33,7 @@ alias ai='cd $HOME/Documents/R_Drive/01_Programming_Stuff/18_AI'
 alias interviewprep='cd $HOME/Documents/R_Drive/01_Programming_Stuff/16_Algos/algorithm/interview_preparation'
 
 #ChargePoint Specific
-alias cp4k='cd $HOME/cp_src/cp4k'
+alias cp4k='cd $HOME/cp_src/emb-cphm400-build'
 alias generic='cd $HOME/cp_src/cp4k/emb-cphm400-build-generic'
 alias chaps='cd $HOME/cp_src/emb-chaps'
 alias core='cd $HOME/cp_src/emb-core'
@@ -211,6 +211,7 @@ alias telnet_cpnk_serial='telnet 172.16.251.41 2048'
 
 
 alias connect_build2server='ssh sgupta@build2server'          # Builtin server for building source
+alias connect_build2server_buildin='ssh build-in@build2server'   # Builtin server for building source
 
 
 if [ "$HOSTNAME" = "Sudhanshus-MacBook-Pro.local" ]; then
